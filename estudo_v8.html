@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulado ETEC</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f7;--paper:#fff;--ink:#14213d;--muted:#5a6785;--line:#cfd8e6;--accent:#1d4ed8;--btn:#1d4ed8;--soft:#f3f6fd;--sel:#eaf0ff;--ok:#15803d;--okbg:#e3f5ea;--bad:#b91c1c;--badbg:#fde8e8;--warnbg:#fff7e6;--shadow:0 14px 26px -10px rgba(20,33,61,.35);--fs:18px}
+[data-theme=dark]{--bg:#0c1222;--paper:#151f38;--ink:#e8edf8;--muted:#9fb0d0;--line:#2a3a5f;--accent:#8bb0ff;--btn:#3b6ef0;--soft:#1b2a4d;--sel:#1d2f5c;--ok:#4ade80;--okbg:#12301f;--bad:#f87171;--badbg:#3a1a1a;--warnbg:#3a2c10;--shadow:0 14px 26px -10px rgba(0,0,0,.7)}
+[data-size=grande]{--fs:20px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:var(--fs);line-height:1.5;transition:background .25s,color .25s}
+main{max-width:720px;margin:0 auto;padding:0 16px 56px}
+.topbar{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0 6px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;margin-bottom:10px}
+.logo,.flogo{display:grid;place-items:center;flex:none;background:#fff;border:1px solid var(--line)}
+.logo{width:48px;height:48px;border-radius:12px;padding:3px}
+.flogo{width:100px;height:100px;margin:0 auto 12px;border-radius:22px;padding:6px}
+.logo img,.flogo img{display:block;width:100%;height:100%;object-fit:contain}
+.foot{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.9rem}
+.foot p{margin:0}
+nav{display:flex;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:5px}
+nav button{flex:1;background:transparent;color:var(--muted);border:0;padding:10px 6px;border-radius:8px;font-size:.92rem}
+nav button[aria-current=page]{background:var(--btn);color:#fff}
+.sheet{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--btn);border-radius:14px;padding:28px 24px;margin-top:12px}
+h1{font-size:2rem;line-height:1.15;margin:0 0 10px}
+h2{font-size:1.2rem;margin:22px 0 10px}
+p{margin:0 0 14px}
+.muted{color:var(--muted);font-size:.95rem}
+button{font:inherit;cursor:pointer;border-radius:8px;padding:12px 22px;border:2px solid var(--btn);background:var(--btn);color:#fff;font-weight:700}
+button.ghost{background:var(--paper);color:var(--accent);border-color:var(--accent)}
+button.danger{background:var(--paper);color:var(--bad);border-color:var(--bad)}
+button.danger:hover:not(:disabled){background:var(--bad);color:var(--paper)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+button,.pick,.opt,.hist{transition:transform .18s ease,box-shadow .18s ease,border-color .18s,background .18s,color .18s}
+button:hover:not(:disabled){transform:translateY(-4px);box-shadow:var(--shadow)}
+button:active:not(:disabled){transform:translateY(-1px)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lv{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pick{background:var(--paper);color:var(--ink);border:2px solid var(--line);text-align:left;padding:12px 14px}
+.pick small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.pick:hover{border-color:var(--accent)}
+.pick[aria-pressed=true]{border-color:var(--accent);background:var(--sel);box-shadow:inset 0 0 0 1px var(--accent)}
+.pick.all{grid-column:1/-1}
+.lv .pick{text-align:center}
+.top{display:flex;justify-content:space-between;margin-bottom:10px;font-size:.95rem;color:var(--muted)}
+.bar{height:8px;background:var(--line);border-radius:4px;margin-bottom:22px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--btn);transition:width .3s}
+.area{display:inline-block;font-weight:700;color:var(--accent);margin-bottom:6px}
+.q{font-size:1.2rem;font-weight:700;margin-bottom:18px}
+.opt{display:flex;gap:14px;align-items:center;width:100%;text-align:left;background:var(--paper);color:var(--ink);border:2px solid var(--line);margin-bottom:10px;padding:12px 14px;font-weight:400}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.bub{flex:none;width:34px;height:34px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-weight:700;font-size:.95rem}
+.opt.sel{border-color:var(--accent);background:var(--sel)}
+.opt.sel .bub{background:var(--ink);color:var(--paper)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.right .bub{background:var(--ok);border-color:var(--ok);color:var(--paper)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.opt.wrong .bub{background:var(--bad);border-color:var(--bad);color:var(--paper)}
+.opt:disabled{opacity:1;cursor:default}
+.fb{margin:14px 0;padding:12px 14px;border-left:4px solid var(--accent);background:var(--soft);font-size:.98rem;border-radius:0 8px 8px 0}
+.actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.score{font-size:3.4rem;font-weight:700;line-height:1;margin:6px 0;color:var(--accent)}
+.level{font-size:1.3rem;font-weight:700;margin-bottom:10px}
+.row{margin-bottom:14px}
+.lab{display:flex;justify-content:space-between;margin-bottom:4px}
+.track{height:12px;background:var(--line);border-radius:6px;overflow:hidden}
+.track i{display:block;height:100%}
+.rev{margin:10px 0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:.95rem}
+.note{margin-top:22px;padding-top:14px;border-top:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.stat{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center;font-size:.9rem;color:var(--muted);background:var(--paper)}
+.stat b{display:block;font-size:1.5rem;color:var(--ink)}
+select{font:inherit;padding:10px 12px;border:2px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);width:100%}
+.chart{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.gl{stroke:var(--line)}.tx{fill:var(--muted)}.ln{stroke:var(--accent)}.dt{fill:var(--accent)}
+.hist{width:100%;text-align:left;background:var(--paper);color:var(--ink);border:1px solid var(--line);margin-bottom:8px;padding:10px 12px;font-weight:400;display:flex;justify-content:space-between;gap:10px;font-size:.95rem}
+.hist:hover{border-color:var(--accent)}
+.pill{font-weight:700;white-space:nowrap}
+.warn{background:var(--warnbg);border-left:4px solid #d97706;padding:10px 12px;font-size:.95rem;margin-bottom:14px;border-radius:0 8px 8px 0}
+.study{border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:8px;padding:10px 12px;margin:10px 0}
+.study p{margin:6px 0 0;font-size:.95rem}
+.study .lab{gap:12px;align-items:flex-start}
+.hide{display:none!important}
+@media (max-width:480px){.grid{grid-template-columns:1fr}.pick.all{grid-column:auto}.sheet{padding:22px 16px}nav button{font-size:.85rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}button:hover:not(:disabled){transform:none}}
+</style>
+</head>
+<body>
+<main>
+<header class="topbar" id="topbar">
+  <div class="brand"><span class="logo"><img class="lg" alt="Logo da Irmandade"></span>Simulado ETEC</div>
+  <nav aria-label="Navegação"><button data-go="menu">Provas</button><button data-go="hist">Progresso</button><button data-go="settings">Configurações</button></nav>
+</header>
+<section class="sheet" id="menu">
+  <h1>Escolha sua prova</h1>
+  <p>Escolha a prova e o nível, responda e veja seu desempenho com explicação de cada questão.</p>
+  <h2>1. Qual prova?</h2>
+  <div class="grid" id="mats"></div>
+  <h2>2. Qual nível?</h2>
+  <div class="lv" id="lvs"></div>
+  <div class="warn hide" id="nostore">Este navegador não permite salvar dados (modo privado?). O histórico não será guardado.</div>
+  <div class="actions"><button id="go" disabled>Começar</button><button id="histbtn" class="ghost">Meu histórico</button></div>
+</section>
+
+<section class="sheet hide" id="quiz">
+  <div class="top"><span id="count"></span><span id="timer"></span></div>
+  <div class="bar"><i id="prog"></i></div>
+  <div class="area" id="area"></div>
+  <div class="q" id="qtext"></div>
+  <div id="opts"></div>
+  <div class="fb hide" id="fb"></div>
+  <div class="actions">
+    <button id="confirm" disabled>Confirmar resposta</button>
+    <button id="next" class="hide">Próxima questão</button>
+    <button id="quit" class="ghost">Sair</button>
+  </div>
+</section>
+
+<section class="sheet hide" id="result"></section>
+
+<section class="sheet hide" id="hist">
+  <h1>Meu histórico</h1>
+  <p class="muted">Os resultados ficam salvos só neste navegador, neste aparelho.</p>
+  <div class="grid"><select id="fm" aria-label="Filtrar por prova"></select><select id="fl" aria-label="Filtrar por nível"></select></div>
+  <div id="hbody"></div>
+  <div class="actions"><button id="hback" class="ghost">Voltar</button><button id="hclear" class="ghost">Apagar histórico</button></div>
+</section>
+
+<section class="sheet hide" id="detail"></section>
+
+<section class="sheet hide" id="settings">
+  <h1>Configurações</h1>
+  <h2>Tema</h2>
+  <div class="lv" id="themeBtns"></div>
+  <h2>Tamanho do texto</h2>
+  <div class="grid" id="sizeBtns"></div>
+  <h2>Cronômetro durante a prova</h2>
+  <div class="grid" id="timerBtns"></div>
+  <h2>Meu progresso</h2>
+  <div class="stats" id="setstats"></div>
+  <div class="actions">
+    <button id="seeprog" class="ghost">Ver gráfico</button>
+    <button id="exp" class="ghost">Exportar backup</button>
+    <button id="impbtn" class="ghost">Importar backup</button>
+    <input type="file" id="imp" accept="application/json" class="hide">
+  </div>
+  <p class="muted" style="margin-top:10px">O backup é um arquivo que permite levar o progresso para outro aparelho ou navegador.</p>
+  <h2>Zona de perigo</h2>
+  <p class="muted">Apagar o progresso remove todas as provas salvas neste aparelho e não pode ser desfeito.</p>
+  <button id="wipe" class="danger">Apagar todo o progresso</button>
+</section>
+<footer class="foot">
+  <div class="flogo"><img class="lg" alt="Logo da Irmandade"></div>
+  <p>© <span id="ano">2026</span> Irmandade. Todos os direitos reservados.</p>
+</footer>
+</main>
+
+<script>
+/* Banco de questões: [enunciado, [alternativas], índice da correta (0-3), explicação] */
+const D={
+"Português":{
+"Fácil":[
+["Qual é o plural de “cidadão”?",["Cidadões","Cidadãos","Cidadães","Cidadãoes"],1,"O plural de cidadão é cidadãos."],
+["Qual é o antônimo de “generoso”?",["Bondoso","Gentil","Mesquinho","Amável"],2,"Generoso dá; mesquinho é apegado e egoísta."],
+["Qual palavra é um substantivo?",["Correr","Rápido","Bonito","Casa"],3,"Casa nomeia um ser ou objeto: é substantivo."],
+["Complete: “Ela ___ de viajar.”",["gosto","gostamos","gosta","gostam"],2,"Sujeito “ela” (3ª pessoa do singular) pede “gosta”."],
+["Qual é o feminino de “cavaleiro”?",["Cavaleira","Cavalheira","Cavalero","Cavalina"],0,"O feminino de cavaleiro é cavaleira."],
+["Qual palavra está escrita corretamente?",["Excessão","Exceção","Escessão","Eceção"],1,"A grafia correta é exceção."],
+["Qual é o aumentativo de “casa”?",["Casinha","Casarão","Casal","Casebre"],1,"Casarão é uma forma aumentativa de casa."],
+["Qual palavra é um verbo?",["Felicidade","Cantar","Azul","Mesa"],1,"Cantar indica uma ação e é um verbo."],
+["Qual é o plural de “papel”?",["Papels","Papéis","Papeis","Papéus"],1,"O plural de papel é papéis."],
+["Em “O menino correu”, qual é o verbo?",["O","Menino","Correu","Nenhuma"],2,"Correu indica a ação praticada pelo menino."],
+["Qual palavra é sinônimo de “alegre”?",["Triste","Contente","Bravo","Cansado"],1,"Contente tem sentido semelhante a alegre."],
+["Qual palavra é antônimo de “escuro”?",["Sombrio","Claro","Preto","Fechado"],1,"Claro expressa ideia oposta a escuro."],
+["Qual frase apresenta pontuação adequada?",["Vamos comer crianças!","Vamos comer, crianças!","Vamos, comer crianças!","Vamos comer crianças,"],1,"A vírgula separa o vocativo crianças."],
+["Qual palavra é um adjetivo?",["Beleza","Rapidamente","Cuidadoso","Estudar"],2,"Cuidadoso caracteriza um substantivo, portanto é adjetivo."],
+["Complete: “Nós ___ ao cinema ontem.”",["foi","fomos","foram","iria"],1,"O sujeito nós exige a forma fomos no pretérito perfeito."],
+["Qual é o diminutivo de “flor”?",["Florzinha","Florona","Floral","Florista"],0,"Florzinha é uma forma diminutiva de flor."],
+["Qual palavra apresenta encontro consonantal?",["Prato","Aula","Ilha","Saúde"],0,"Em prato, p e r aparecem juntos na mesma sílaba."],
+["Qual palavra apresenta dígrafo?",["Casa","Chuva","Pato","Bola"],1,"Em chuva, ch representa um único fonema."],
+["Qual é a sílaba tônica de “janela”?",["Ja","Ne","La","Todas"],1,"A sílaba tônica é ne: ja-NE-la."],
+["Qual palavra é oxítona?",["Lápis","Mesa","Café","Árvore"],2,"Café tem a última sílaba como tônica."],
+["Qual palavra é paroxítona?",["Sofá","Médico","Caderno","Cipó"],2,"Caderno tem a penúltima sílaba tônica."],
+["Qual palavra é proparoxítona?",["Também","Fácil","Música","Papel"],2,"Música tem a antepenúltima sílaba tônica."],
+["Em “Ela chegou cedo”, a palavra “cedo” indica:",["Lugar","Tempo","Modo","Negação"],1,"Cedo modifica o verbo e indica tempo."],
+["Qual pronome substitui corretamente “Pedro e eu”?",["Eles","Nós","Vós","Vocês"],1,"Pedro e eu corresponde à primeira pessoa do plural: nós."]],
+"Médio":[
+["Assinale a frase correta.",["Haviam muitas pessoas na festa.","Havia muitas pessoas na festa.","Houveram muitas pessoas na festa.","Fazem muitas pessoas na festa."],1,"Haver no sentido de existir é impessoal: fica no singular."],
+["Complete: “Entreguei o livro ___ professora.”",["a","há","à","as"],2,"Entregar a alguém (a) + a professora (artigo) = à (crase)."],
+["Em “O livro que li é ótimo”, a palavra “que” é:",["Conjunção integrante","Pronome relativo","Preposição","Advérbio"],1,"“Que” retoma “livro” e liga as orações: pronome relativo."],
+["Em “Choveu muito ontem”, o sujeito é:",["Simples","Composto","Oculto","Inexistente"],3,"Verbos de fenômeno da natureza formam oração sem sujeito."],
+["Em “Apesar da chuva, saímos”, a expressão destacada indica:",["Causa","Concessão","Finalidade","Conclusão"],1,"Apesar de introduz uma circunstância concessiva."],
+["Assinale a frase com concordância nominal correta.",["As meninas estavam meio cansadas.","As meninas estavam meias cansadas.","As menina estavam meio cansada.","As meninas estava meio cansadas."],0,"Como advérbio, meio é invariável e modifica cansadas."],
+["Em “Precisa-se de funcionários”, o sujeito é:",["Funcionários","Simples","Indeterminado","Inexistente"],2,"A partícula se indetermina o sujeito com verbo transitivo indireto."],
+["Qual alternativa apresenta uso correto da crase?",["Vou à escola.","Vou à pé.","Entreguei à ele.","Cheguei à uma conclusão."],0,"O verbo ir exige a preposição a e escola admite artigo feminino a."],
+["Em “O aluno estudou bastante, portanto foi aprovado”, portanto expressa:",["Oposição","Explicação","Conclusão","Alternância"],2,"Portanto introduz uma conclusão decorrente da oração anterior."],
+["Assinale a alternativa em que há erro de concordância verbal.",["Faltam duas páginas.","Existem soluções.","Aconteceram imprevistos.","Fazem cinco anos."],3,"Fazer indicando tempo decorrido é impessoal e fica no singular."],
+["Em “A menina que venceu recebeu medalha”, que é:",["Conjunção causal","Pronome relativo","Artigo","Preposição"],1,"Que retoma menina e introduz uma oração adjetiva."],
+["Qual frase está na voz ativa?",["O relatório foi escrito por Ana.","A janela foi quebrada.","Ana escreveu o relatório.","O prêmio será entregue."],2,"Na voz ativa, o sujeito pratica a ação."],
+["Em “Não fui porque estava doente”, porque introduz:",["Causa","Condição","Comparação","Concessão"],0,"Porque apresenta a causa de não ter ido."],
+["Qual alternativa apresenta discurso indireto?",["Ele disse: “Estou cansado”.","Ele disse que estava cansado.","“Estou cansado!”, afirmou ele.","Ele: “Estou cansado”."],1,"No discurso indireto, a fala é relatada pelo narrador."],
+["Assinale a colocação pronominal adequada à norma-padrão.",["Nunca disseram-me isso.","Nunca me disseram isso.","Nunca disseram isso-me.","Me nunca disseram isso."],1,"A palavra negativa nunca atrai o pronome: ocorre próclise."],
+["Em “O livro foi comprado por Lucas”, o termo por Lucas é:",["Sujeito","Objeto direto","Agente da passiva","Predicativo"],2,"O agente da passiva indica quem pratica a ação recebida pelo sujeito."],
+["Qual alternativa apresenta predicado nominal?",["O atleta correu.","A menina parece feliz.","O cão latiu.","Os alunos chegaram."],1,"Parece é verbo de ligação e feliz é predicativo do sujeito."],
+["Em “Estudei muito, mas não passei”, mas expressa:",["Adição","Oposição","Causa","Finalidade"],1,"Mas é conjunção coordenativa adversativa."],
+["Qual palavra está acentuada corretamente?",["Ideia","Heróico","Assembléia","Vôo"],0,"Pelas regras atuais, ideia não recebe acento; as demais formas estão desatualizadas."],
+["Em “O vento sussurrava entre as árvores”, ocorre:",["Personificação","Eufemismo","Antítese","Pleonasmo"],0,"Atribui-se ao vento uma ação humana: sussurrar."],
+["Qual alternativa apresenta um aposto?",["João, meu vizinho, mudou-se.","João chegou cedo.","João gosta de música.","João comprou um livro."],0,"Meu vizinho explica ou identifica João, funcionando como aposto."],
+["Em “Se chover, ficaremos em casa”, a oração inicial expressa:",["Causa","Condição","Concessão","Consequência"],1,"A conjunção se introduz uma condição."],
+["Qual frase apresenta ambiguidade?",["Vi o homem com o telescópio.","A menina leu o livro.","O sol nasceu cedo.","O professor explicou a matéria."],0,"Não fica claro se quem usava o telescópio era o observador ou o homem."],
+["Em “A prova estava tão difícil que muitos desistiram”, a segunda oração indica:",["Finalidade","Consequência","Comparação","Condição"],1,"A estrutura tão... que expressa consequência."]],
+"Difícil":[
+["Complete: “Ele é um ___ aluno.”",["mal","mau","mais","mão"],1,"“Mau” é o oposto de bom (adjetivo); “mal” é oposto de bem."],
+["Em “O ladrão foi preso pela polícia”, a voz verbal é:",["Ativa","Passiva","Reflexiva","Neutra"],1,"O sujeito recebe a ação (foi preso): voz passiva."],
+["Qual frase segue a regência correta?",["Prefiro cinema do que teatro.","Prefiro cinema a teatro.","Prefiro mais cinema que teatro.","Prefiro cinema de teatro."],1,"Preferir pede a preposição “a”: prefiro algo a outra coisa."],
+["“Tenho mil coisas para fazer” contém:",["Eufemismo","Antítese","Hipérbole","Ironia"],2,"Exagero intencional para dar ênfase: hipérbole."],
+["Em “Convém que todos revisem o conteúdo”, a oração iniciada por que é:",["Subordinada substantiva subjetiva","Subordinada adverbial causal","Subordinada adjetiva restritiva","Coordenada explicativa"],0,"A oração funciona como sujeito do verbo convém."],
+["Assinale a alternativa em que a regência está correta.",["O aluno obedeceu o regulamento.","O aluno obedeceu ao regulamento.","O aluno preferiu mais matemática.","O aluno aspirou o cargo, no sentido de desejar."],1,"Obedecer é transitivo indireto e exige a preposição a."],
+["Em “Os documentos, que estavam incompletos, foram devolvidos”, a oração adjetiva é:",["Restritiva","Explicativa","Substantiva","Reduzida de infinitivo"],1,"As vírgulas indicam uma informação adicional, de caráter explicativo."],
+["Qual alternativa apresenta emprego correto de “onde”?",["A situação onde me encontro é difícil.","A cidade onde nasci é pequena.","O argumento onde discordo é fraco.","O momento onde chegou foi tarde."],1,"Onde deve retomar lugar."],
+["Em “Não obstante as dificuldades, concluiu o projeto”, a expressão equivale a:",["Por causa das dificuldades","Apesar das dificuldades","Antes das dificuldades","A fim de evitar dificuldades"],1,"Não obstante tem valor concessivo, equivalente a apesar de."],
+["Assinale a frase com concordância verbal correta.",["Mais de um candidato faltaram.","Mais de um candidato faltou.","Mais de um candidatos faltou.","Mais de um candidato faltassem."],1,"A expressão mais de um normalmente leva o verbo ao singular."],
+["Em “É provável que haja mudanças”, o verbo haver está no sentido de:",["Ter posse","Existir","Acontecer no passado","Auxiliar"],1,"Haver com sentido de existir é impessoal e permanece no singular."],
+["Qual alternativa apresenta oração subordinada adverbial proporcional?",["À medida que estudava, compreendia melhor.","Embora estudasse, errou.","Como estava cansado, dormiu.","Se estudar, aprenderá."],0,"À medida que estabelece proporção entre o estudo e a compreensão."],
+["Em “O diretor informou aos alunos que a aula seria cancelada”, a oração que a aula seria cancelada exerce função de:",["Objeto direto","Sujeito","Adjunto adnominal","Agente da passiva"],0,"Completa o sentido de informou, funcionando como objeto direto oracional."],
+["Assinale a alternativa em que o uso da vírgula está correto.",["Os alunos que estudaram, passaram.","Quando terminou a prova, todos saíram.","A professora explicou, a matéria.","Meu irmão, comprou um computador."],1,"A oração adverbial deslocada para o início é separada por vírgula."],
+["Em “A notícia foi recebida com frieza”, a expressão com frieza indica:",["Agente da passiva","Modo","Objeto indireto","Vocativo"],1,"A expressão modifica o modo como a notícia foi recebida."],
+["Qual alternativa apresenta concordância verbal correta?",["A maioria dos alunos chegaram atrasados.","A maioria dos alunos chegou atrasada.","A maioria dos aluno chegaram atrasado.","A maioria dos alunos chegarão atrasada."],1,"O núcleo maioria está no singular e admite concordância com o verbo no singular."],
+["Em “Se eu tivesse estudado, teria obtido melhor resultado”, há:",["Fato certo no presente","Hipótese passada não realizada","Ordem direta","Certeza futura"],1,"A estrutura expressa uma condição passada que não se concretizou."],
+["Qual alternativa apresenta paralelismo sintático adequado?",["Gosto de ler, escrever e de matemática.","Gosto de leitura, escrita e matemática.","Gosto de ler, escrita e matemática.","Gosto da leitura, escrever e matemática."],1,"Os três elementos mantêm a mesma estrutura nominal."],
+["Em “Embora os dados fossem escassos, a equipe chegou a uma conclusão”, a oração subordinada é:",["Causal","Concessiva","Consecutiva","Final"],1,"Embora introduz uma circunstância que não impede o fato principal."],
+["Assinale a alternativa em que o pronome relativo está empregado corretamente.",["Este é o livro cujo autor admiro.","Este é o livro que o autor admiro.","Este é o livro onde autor admiro.","Este é o livro de cujo autor admiro."],0,"Cujo estabelece relação de posse entre livro e autor, sem artigo depois dele."],
+["A expressão “ao encontro de” significa:",["Em oposição a","Na direção de; em concordância com","Distante de","Em consequência de"],1,"Ao encontro de indica aproximação ou concordância; de encontro a indica oposição."],
+["Em “A pesquisa revelou resultados surpreendentes”, o termo surpreendentes é:",["Adjunto adverbial","Predicativo do sujeito","Adjunto adnominal","Objeto indireto"],2,"Surpreendentes caracteriza diretamente o substantivo resultados."],
+["Qual alternativa apresenta oração coordenada sindética conclusiva?",["Estudou bastante, porém errou.","Estudou bastante, portanto foi aprovado.","Estudou porque queria passar.","Estudou quando chegou."],1,"Portanto é conjunção coordenativa conclusiva."],
+["Em “Não se trata de vencer, mas de aprender”, a construção estabelece:",["Alternância","Contraste","Causa","Condição"],1,"A estrutura contrapõe a ideia inicial, destacando aprender."]]},
+"Matemática":{
+"Fácil":[
+["Quanto é 15 + 28 × 2?",["86","71","56","76"],1,"Multiplica primeiro: 28 × 2 = 56. Depois 15 + 56 = 71."],
+["Quanto é metade de 90?",["30","40","45","50"],2,"90 ÷ 2 = 45."],
+["Pedro comprou 3 canetas de R$ 4 e pagou com R$ 20. Qual foi o troco?",["R$ 6","R$ 8","R$ 10","R$ 12"],1,"3 × 4 = 12. Troco: 20 − 12 = 8."],
+["Quanto é 7²?",["14","42","49","56"],2,"7 × 7 = 49."],
+["Quanto é 15 + 27?",["32","42","52","38"],1,"15 + 27 = 42."],
+["Quanto é 9 × 7?",["56","63","72","49"],1,"9 × 7 = 63."],
+["Qual é o resultado de 100 - 38?",["62","68","72","58"],0,"100 - 38 = 62."],
+["Quanto é 144 ÷ 12?",["10","11","12","14"],2,"144 ÷ 12 = 12."],
+["Qual é o dobro de 35?",["60","65","70","75"],2,"O dobro é 35 × 2 = 70."],
+["Quanto é 25% de 200?",["25","40","50","75"],2,"25% de 200 é 200 × 0,25 = 50."],
+["Qual é a fração equivalente a 1/2?",["2/3","3/6","2/5","4/6"],1,"3/6 simplificada é igual a 1/2."],
+["Quantos centímetros existem em 3 metros?",["30","300","3000","3"],1,"Cada metro possui 100 centímetros. 3 × 100 = 300."],
+["Qual é o resultado de 5²?",["10","15","20","25"],3,"5² significa 5 × 5 = 25."],
+["Um produto custa R$ 80 e recebe desconto de R$ 20. Qual é o preço final?",["R$ 50","R$ 60","R$ 65","R$ 70"],1,"80 - 20 = 60."],
+["Qual é o perímetro de um quadrado com lado de 6 cm?",["12 cm","18 cm","24 cm","36 cm"],2,"O perímetro é 4 × 6 = 24 cm."],
+["Qual é a metade de 250?",["100","115","125","150"],2,"250 ÷ 2 = 125."],
+["Quanto é 0,5 + 0,25?",["0,30","0,50","0,65","0,75"],3,"0,5 + 0,25 = 0,75."],
+["Qual número é maior?",["0,7","0,65","0,5","0,69"],0,"0,70 é maior que 0,69, 0,65 e 0,50."],
+["Uma caixa tem 12 lápis. Quantos lápis existem em 5 caixas?",["50","55","60","65"],2,"12 × 5 = 60."],
+["Qual é o valor de 3 + 4 × 2?",["14","11","10","16"],1,"A multiplicação vem antes da adição: 3 + 8 = 11."],
+["Quantos graus possui um ângulo reto?",["45°","60°","90°","180°"],2,"Um ângulo reto possui exatamente 90 graus."],
+["Qual é a raiz quadrada de 81?",["7","8","9","10"],2,"9 × 9 = 81."],
+["Se uma pessoa ganha R$ 50 por dia, quanto ganha em 6 dias?",["R$ 250","R$ 300","R$ 350","R$ 400"],1,"50 × 6 = 300."],
+["Qual é o resultado de 2/4 + 1/4?",["1/4","2/4","3/4","4/4"],2,"Como os denominadores são iguais, somamos os numeradores: 3/4."]],
+"Médio":[
+["Quanto é 20% de 350?",["50","60","70","80"],2,"10% = 35, então 20% = 70."],
+["Se 2x + 5 = 17, qual é x?",["5","6","7","11"],1,"2x = 12, logo x = 6."],
+["Qual é a média de 6, 8, 10 e 12?",["8","9","10","11"],1,"Soma = 36; 36 ÷ 4 = 9."],
+["Qual é a área de um triângulo de base 10 e altura 6?",["16","30","60","32"],1,"Área = base × altura ÷ 2 = 60 ÷ 2 = 30."],
+["Resolva a equação: 2x + 6 = 20.",["5","6","7","8"],2,"2x = 20 - 6 = 14. Logo, x = 7."],
+["Quanto é 15% de 300?",["30","35","45","60"],2,"300 × 0,15 = 45."],
+["Um produto de R$ 250 teve aumento de 20%. Qual é o novo preço?",["R$ 270","R$ 280","R$ 300","R$ 320"],2,"20% de 250 é 50. Portanto, 250 + 50 = 300."],
+["Qual é a média aritmética de 6, 8, 10 e 16?",["8","9","10","12"],2,"A soma é 40. Dividindo por 4, temos 10."],
+["Resolva: 3² + 4².",["12","25","49","64"],1,"3² = 9 e 4² = 16. A soma é 25."],
+["Qual é a área de um retângulo de 8 cm por 5 cm?",["13 cm²","26 cm²","40 cm²","80 cm²"],2,"Área = base × altura = 8 × 5 = 40 cm²."],
+["Se 4 trabalhadores realizam um serviço em 12 dias, quantos dias 8 trabalhadores levariam, mantendo o mesmo ritmo?",["3","6","12","24"],1,"Dobrar o número de trabalhadores reduz o tempo pela metade: 12 ÷ 2 = 6."],
+["Qual é o valor de x em 5x - 10 = 25?",["5","6","7","8"],2,"5x = 35. Portanto, x = 7."],
+["Uma viagem de 180 km foi realizada em 3 horas. Qual foi a velocidade média?",["50 km/h","60 km/h","70 km/h","90 km/h"],1,"Velocidade média = distância ÷ tempo = 180 ÷ 3 = 60 km/h."],
+["Qual é a fração simplificada de 18/24?",["2/3","3/4","4/5","5/6"],1,"Dividindo numerador e denominador por 6, obtemos 3/4."],
+["Um triângulo possui ângulos de 50° e 60°. Qual é o terceiro ângulo?",["60°","65°","70°","80°"],2,"A soma dos ângulos internos é 180°. Então, 180 - 50 - 60 = 70°."],
+["Quanto é 2,5 × 4?",["8","9","10","12"],2,"2,5 × 4 = 10."],
+["Qual é o valor de 30% de 150?",["30","40","45","50"],2,"150 × 0,30 = 45."],
+["Resolva: (18 + 6) ÷ 3 × 2.",["12","14","16","18"],2,"Primeiro, 18 + 6 = 24. Depois, 24 ÷ 3 × 2 = 16."],
+["Uma torneira enche 120 litros em 4 horas. Quantos litros enche em 7 horas, mantendo a mesma vazão?",["180","200","210","240"],2,"120 ÷ 4 = 30 litros por hora. 30 × 7 = 210."],
+["Qual é a raiz quadrada de 196?",["12","13","14","16"],2,"14 × 14 = 196."],
+["Um terreno quadrado tem área de 121 m². Qual é a medida de cada lado?",["9 m","10 m","11 m","12 m"],2,"A medida do lado é a raiz quadrada de 121, que é 11."],
+["Qual é o resultado de 3/5 de 100?",["30","40","50","60"],3,"100 ÷ 5 = 20. Depois, 20 × 3 = 60."],
+["Um carro percorre 240 km com 20 litros de combustível. Qual é o consumo médio?",["10 km/L","12 km/L","14 km/L","16 km/L"],1,"240 ÷ 20 = 12 km por litro."],
+["Resolva: x² = 64, considerando x positivo.",["6","7","8","9"],2,"A raiz quadrada positiva de 64 é 8."]],
+"Difícil":[
+["Se x + y = 10 e x − y = 4, qual é x?",["3","6","7","8"],2,"Somando as equações: 2x = 14, logo x = 7."],
+["Um produto de R$ 100 sobe 20% e depois cai 20%. Quanto custa no final?",["R$ 100","R$ 96","R$ 104","R$ 98"],1,"100 × 1,2 = 120; 120 × 0,8 = 96."],
+["2 torneiras iguais enchem um tanque em 6 horas. Quanto tempo levam 3 torneiras?",["3 h","4 h","5 h","9 h"],1,"Mais torneiras, menos tempo: 2 × 6 ÷ 3 = 4 horas."],
+["Qual o juro simples de R$ 1.000 a 2% ao mês durante 5 meses?",["R$ 50","R$ 100","R$ 102","R$ 200"],1,"1000 × 0,02 × 5 = 100."],
+["Resolva a equação: x² - 5x + 6 = 0.",["x = 1 e x = 6","x = 2 e x = 3","x = -2 e x = -3","x = 0 e x = 6"],1,"Fatorando: (x - 2)(x - 3) = 0. As raízes são 2 e 3."],
+["Um produto de R$ 400 recebe desconto de 15% e depois aumento de 10% sobre o novo preço. Qual é o valor final?",["R$ 360","R$ 374","R$ 380","R$ 390"],1,"400 - 15% = 340. Depois, 340 + 10% de 340 = 374."],
+["Qual é o valor do discriminante da equação 2x² - 4x + 1 = 0?",["4","6","8","12"],2,"Delta = b² - 4ac = (-4)² - 4 × 2 × 1 = 16 - 8 = 8."],
+["Um investimento de R$ 1.000 rende juros simples de 2% ao mês durante 5 meses. Qual será o montante?",["R$ 1.050","R$ 1.100","R$ 1.200","R$ 1.250"],1,"Juros = 1000 × 0,02 × 5 = 100. Montante = 1100."],
+["Em uma turma de 40 alunos, 60% são meninas. Quantos meninos há na turma?",["12","14","16","24"],2,"60% de 40 são 24 meninas. Portanto, 40 - 24 = 16 meninos."],
+["Se 3x + 2y = 16 e x = 4, qual é o valor de y?",["1","2","3","4"],1,"3 × 4 + 2y = 16. Assim, 12 + 2y = 16 e y = 2."],
+["Qual é a área de um círculo de raio 3 cm? Use π = 3,14.",["18,84 cm²","28,26 cm²","31,40 cm²","37,68 cm²"],1,"Área = πr² = 3,14 × 9 = 28,26 cm²."],
+["Uma escada de 10 m está apoiada em uma parede. Sua base está a 6 m da parede. Qual altura ela alcança?",["6 m","7 m","8 m","9 m"],2,"Pelo Teorema de Pitágoras: h² + 6² = 10². h² = 64, então h = 8."],
+["Qual é o próximo número da sequência 2, 6, 12, 20, 30, ...?",["36","40","42","44"],2,"As diferenças são 4, 6, 8 e 10. A próxima diferença é 12. Logo, 30 + 12 = 42."],
+["Uma população de 2.000 habitantes cresce 10% ao ano. Qual será a população após dois anos, considerando crescimento composto?",["2.200","2.400","2.420","2.500"],2,"2000 × 1,1 × 1,1 = 2420."],
+["Resolva: 2(x - 3) + 4 = 3x - 5.",["3","4","5","6"],0,"2x - 6 + 4 = 3x - 5. Então, 2x - 2 = 3x - 5 e x = 3."],
+["Em uma urna há 5 bolas vermelhas e 3 azuis. Qual é a probabilidade de retirar uma bola azul?",["3/5","3/8","5/8","1/3"],1,"São 8 bolas no total, das quais 3 são azuis. Probabilidade = 3/8."],
+["Qual é o volume de um cubo com aresta de 4 cm?",["16 cm³","32 cm³","48 cm³","64 cm³"],3,"Volume = aresta³ = 4 × 4 × 4 = 64 cm³."],
+["Se 5 máquinas produzem 500 peças em 4 horas, quantas peças 8 máquinas produzem em 6 horas, no mesmo ritmo?",["900","1.000","1.200","1.500"],2,"Cada máquina produz 25 peças por hora. 8 × 6 × 25 = 1200."],
+["As raízes de uma equação do segundo grau são 4 e -2. Qual é a equação na forma x² + bx + c = 0?",["x² - 2x - 8 = 0","x² + 2x - 8 = 0","x² - 6x + 8 = 0","x² + 6x - 8 = 0"],0,"A soma das raízes é 2 e o produto é -8. Assim, x² - 2x - 8 = 0."],
+["Um reservatório está com 3/5 de sua capacidade preenchida. Após receber mais 120 litros, fica completamente cheio. Qual é sua capacidade?",["200 L","240 L","300 L","360 L"],2,"Os 120 litros representam 2/5 da capacidade. Capacidade total = 120 × 5 ÷ 2 = 300 L."],
+["Qual é o resultado de (2³ × 2⁴) ÷ 2²?",["16","24","32","64"],2,"Na multiplicação somamos os expoentes e na divisão subtraímos: 2^(3+4-2) = 2⁵ = 32."],
+["Um triângulo retângulo possui catetos de 9 cm e 12 cm. Qual é a hipotenusa?",["13 cm","14 cm","15 cm","16 cm"],2,"Pelo Teorema de Pitágoras: 9² + 12² = 81 + 144 = 225. A raiz de 225 é 15."],
+["A média de cinco números é 18. Quatro deles são 12, 16, 20 e 22. Qual é o quinto número?",["18","20","22","24"],1,"A soma dos cinco números deve ser 90. Os quatro conhecidos somam 70. O quinto é 20."],
+["Uma mercadoria teve aumento de 25% e passou a custar R$ 250. Qual era seu preço original?",["R$ 180","R$ 190","R$ 200","R$ 225"],2,"250 ÷ 1,25 = 200."]]},
+"Raciocínio lógico":{
+"Fácil":[
+["Qual é o próximo número: 5, 10, 15, 20, ...?",["22","24","25","30"],2,"A sequência soma 5 a cada passo."],
+["Qual não pertence ao grupo: maçã, banana, cenoura, laranja?",["Maçã","Banana","Cenoura","Laranja"],2,"Cenoura é legume; as outras são frutas."],
+["Hoje é segunda-feira. Que dia será daqui a 3 dias?",["Terça","Quarta","Quinta","Sexta"],2,"Segunda + 3 = quinta."],
+["Maria é mãe de João. João é pai de Lia. Maria é ___ de Lia.",["Mãe","Tia","Avó","Irmã"],2,"Mãe do pai de Lia: avó."],
+["Qual é o próximo número da sequência: 2, 4, 6, 8, ...?",["9","10","11","12"],1,"A sequência aumenta de 2 em 2. O próximo número é 10."],
+["Qual palavra não pertence ao grupo?",["Maçã","Banana","Cenoura","Uva"],2,"Cenoura é uma hortaliça, enquanto as outras são frutas."],
+["Se todos os gatos são animais e Mimi é um gato, então:",["Mimi é uma planta","Mimi é um animal","Mimi é uma pessoa","Não é possível saber"],1,"Se todos os gatos são animais e Mimi é um gato, Mimi necessariamente é um animal."],
+["João é mais alto que Pedro. Pedro é mais alto que Lucas. Quem é o mais baixo?",["João","Pedro","Lucas","Não é possível saber"],2,"A ordem de altura é João, Pedro e Lucas. Lucas é o mais baixo."],
+["Qual letra vem a seguir: A, C, E, G, ...?",["H","I","J","K"],1,"A sequência avança uma letra, pulando sempre a seguinte: A, C, E, G, I."],
+["Se hoje é segunda-feira, que dia será daqui a 3 dias?",["Quarta-feira","Quinta-feira","Sexta-feira","Sábado"],1,"Três dias após segunda-feira é quinta-feira."],
+["Qual número completa a sequência: 1, 2, 4, 8, ...?",["10","12","14","16"],3,"Cada número é o dobro do anterior."],
+["Maria tem o dobro da idade de Ana. Se Ana tem 5 anos, quantos anos Maria tem?",["5","8","10","15"],2,"O dobro de 5 é 10."],
+["Qual elemento é diferente dos demais?",["Quadrado","Triângulo","Círculo","Retângulo"],2,"O círculo não possui lados retos, diferentemente dos outros."],
+["Se 3 lápis custam R$ 6, quanto custam 6 lápis pelo mesmo preço unitário?",["R$ 9","R$ 10","R$ 12","R$ 18"],2,"Cada lápis custa R$ 2. Seis lápis custam R$ 12."],
+["Qual número está faltando: 10, 20, 30, __, 50?",["35","40","45","60"],1,"A sequência aumenta de 10 em 10."],
+["Todos os pássaros têm asas. Um pardal é um pássaro. Portanto:",["O pardal tem asas","O pardal não voa","Todo animal é pássaro","Nenhuma conclusão é possível"],0,"Como o pardal pertence ao grupo dos pássaros, possui asas."],
+["Qual é o oposto de 'aumentar'?",["Crescer","Elevar","Diminuir","Expandir"],2,"Diminuir é o antônimo de aumentar."],
+["Se uma semana tem 7 dias, quantos dias existem em 3 semanas?",["14","18","21","28"],2,"3 × 7 = 21 dias."],
+["Qual número completa a sequência: 3, 6, 9, 12, ...?",["13","14","15","16"],2,"A sequência aumenta de 3 em 3."],
+["Pedro chegou antes de Carlos, e Carlos chegou antes de André. Quem chegou primeiro?",["Pedro","Carlos","André","Todos juntos"],0,"Pedro chegou antes dos outros dois."],
+["Se A = 1, B = 2 e C = 3, quanto vale D?",["2","3","4","5"],2,"D é a quarta letra do alfabeto."],
+["Qual número é diferente dos demais?",["4","9","16","20"],3,"4, 9 e 16 são quadrados perfeitos. 20 não é."],
+["Uma sala possui 4 cantos. Em cada canto há uma cadeira. Quantas cadeiras existem?",["2","3","4","8"],2,"Há uma cadeira em cada um dos quatro cantos."]],
+"Médio":[
+["Qual é o próximo número: 1, 4, 9, 16, ...?",["20","24","25","36"],2,"São os quadrados: 1², 2², 3², 4², 5² = 25."],
+["Todos do grupo A estudam inglês. Carlos está no grupo A. Logo:",["Carlos não estuda inglês","Carlos estuda inglês","Carlos é professor","Nada se pode concluir"],1,"Se todo A estuda inglês e Carlos é A, ele estuda inglês."],
+["Hoje é quarta-feira. Que dia será daqui a 100 dias?",["Quinta","Sexta","Sábado","Domingo"],1,"100 = 14 semanas + 2 dias. Quarta + 2 = sexta."],
+["O pai tem 40 anos e o filho 10. Daqui a quantos anos a idade do pai será o dobro da do filho?",["10","15","20","25"],2,"40 + x = 2(10 + x) → x = 20."],
+["Qual é o próximo número: 2, 6, 12, 20, 30, ...?",["36","40","42","44"],2,"As diferenças são 4, 6, 8 e 10. A próxima é 12, resultando em 42."],
+["Se todos os médicos estudaram biologia e Ana é médica, então:",["Ana não estudou biologia","Ana estudou biologia","Ana é professora","Não é possível concluir"],1,"Ana pertence ao grupo dos médicos, portanto estudou biologia."],
+["Em uma corrida, você ultrapassa o segundo colocado. Em qual posição fica?",["Primeiro","Segundo","Terceiro","Quarto"],1,"Ao ultrapassar o segundo colocado, você assume a segunda posição."],
+["Qual número completa a sequência: 1, 4, 9, 16, 25, ...?",["30","32","36","49"],2,"São quadrados perfeitos: 1², 2², 3², 4², 5² e 6²."],
+["Se ontem foi domingo, que dia será amanhã?",["Segunda-feira","Terça-feira","Quarta-feira","Sábado"],1,"Se ontem foi domingo, hoje é segunda e amanhã será terça."],
+["Três pessoas apertam as mãos uma vez entre cada par. Quantos apertos acontecem?",["2","3","4","6"],1,"Os pares são: pessoa 1 com 2, pessoa 1 com 3 e pessoa 2 com 3. Total: 3."],
+["Qual é o próximo termo: 81, 27, 9, 3, ...?",["0","1","2","6"],1,"Cada termo é dividido por 3. Portanto, 3 ÷ 3 = 1."],
+["Se nenhum peixe é mamífero e o golfinho é mamífero, então:",["O golfinho é peixe","O golfinho não é peixe","Todo mamífero é peixe","Não é possível concluir"],1,"Como nenhum peixe é mamífero, o golfinho não pode ser peixe."],
+["Uma pessoa tem 4 camisas e 3 calças. Quantas combinações diferentes pode formar usando uma camisa e uma calça?",["7","10","12","16"],2,"4 × 3 = 12 combinações."],
+["Qual número completa a sequência: 2, 3, 5, 8, 12, 17, ...?",["21","22","23","24"],2,"As diferenças são 1, 2, 3, 4 e 5. A próxima é 6. Logo, 17 + 6 = 23."],
+["Em uma família, cada filho tem pelo menos um irmão e pelo menos uma irmã. Qual é o menor número possível de filhos?",["2","3","4","5"],2,"São necessários 2 meninos e 2 meninas: assim, cada menino tem um irmão e uma irmã, e cada menina também."],
+["Se a afirmação 'Todos os alunos passaram' é falsa, então:",["Nenhum aluno passou","Pelo menos um aluno não passou","Todos foram reprovados","A maioria passou"],1,"A negação de 'todos passaram' é 'pelo menos um não passou'."],
+["Qual é o próximo número: 100, 90, 81, 73, 66, ...?",["58","59","60","61"],2,"As diferenças são -10, -9, -8 e -7. A próxima é -6. Portanto, 66 - 6 = 60."],
+["Uma caixa contém 3 bolas vermelhas, 4 azuis e 5 verdes. Quantas bolas devem ser retiradas, no mínimo, sem olhar, para garantir duas da mesma cor?",["3","4","5","6"],1,"Com três retiradas, ainda é possível obter uma de cada cor. A quarta necessariamente repete uma cor."],
+["Se A é maior que B, B é maior que C e C é maior que D, qual é a ordem correta?",["D > C > B > A","A > B > C > D","B > A > D > C","C > D > A > B"],1,"As relações indicam diretamente A > B > C > D."],
+["Qual é o próximo número: 1, 1, 2, 3, 5, 8, ...?",["11","12","13","15"],2,"Cada termo é a soma dos dois anteriores. 5 + 8 = 13."],
+["Em um código, CASA vira DBTB. Como fica MESA seguindo a mesma regra?",["NFTB","NFSB","LDRZ","NFSA"],0,"Cada letra é substituída pela próxima do alfabeto: M→N, E→F, S→T, A→B."],
+["Quatro amigos estão em fila. João está antes de Pedro, Pedro antes de Lucas e Lucas antes de Marcos. Quem está em terceiro?",["João","Pedro","Lucas","Marcos"],2,"A ordem é João, Pedro, Lucas e Marcos. Lucas está em terceiro."],
+["Se 5 pessoas fazem um trabalho em 10 dias, quantos dias 10 pessoas levariam, com produtividade igual?",["2","5","10","20"],1,"Dobrar o número de pessoas reduz o tempo pela metade: 5 dias."],
+["Qual conclusão é válida? Alguns estudantes são atletas. Todos os atletas treinam.",["Todos os estudantes treinam","Nenhum estudante treina","Alguns estudantes treinam","Todos os atletas são estudantes"],2,"Os estudantes que são atletas treinam. Portanto, alguns estudantes treinam."]],
+"Difícil":[
+["Qual é o próximo número: 2, 3, 5, 8, 13, ...?",["18","20","21","24"],2,"Cada termo é a soma dos dois anteriores: 8 + 13 = 21."],
+["5 pessoas se cumprimentam com um aperto de mão, uma vez por par. Quantos apertos ocorrem?",["10","15","20","25"],0,"Combinações de 5 em 2: 5 × 4 ÷ 2 = 10."],
+["Qual o menor ângulo entre os ponteiros às 3h30?",["60°","75°","90°","105°"],1,"Minutos: 180°. Horas: 90° + 15° = 105°. Diferença: 75°."],
+["Se 5 máquinas fazem 5 peças em 5 minutos, em quanto tempo 100 máquinas fazem 100 peças?",["5 min","20 min","50 min","100 min"],0,"Cada máquina faz 1 peça em 5 minutos; 100 máquinas fazem 100 peças em 5 minutos."],
+["Qual é o próximo número: 3, 8, 15, 24, 35, ...?",["42","46","48","50"],2,"As diferenças são 5, 7, 9 e 11. A próxima é 13. Portanto, 35 + 13 = 48."],
+["Em uma sala há 5 pessoas. Cada pessoa cumprimenta todas as outras uma única vez. Quantos cumprimentos acontecem?",["5","10","15","20"],1,"O número de pares é 5 × 4 ÷ 2 = 10."],
+["Se a proposição 'Se chove, então a rua fica molhada' é verdadeira e a rua não está molhada, o que podemos concluir?",["Está chovendo","Não está chovendo","A rua está molhada","Não é possível concluir"],1,"Pela contraposição lógica, se a rua não está molhada, então não choveu."],
+["Qual número completa a sequência: 2, 5, 11, 23, 47, ...?",["93","94","95","96"],2,"Cada termo é o anterior multiplicado por 2 e somado a 1. 47 × 2 + 1 = 95."],
+["Ana, Bruno e Carla têm profissões diferentes: médica, professora e engenheira. Ana não é médica nem engenheira. Bruno não é médico. Qual é a profissão de Carla?",["Médica","Professora","Engenheira","Não é possível determinar"],0,"Ana é professora. Bruno não é médico, então é engenheiro. Carla é médica."],
+["Em um grupo de 30 pessoas, 18 gostam de futebol, 15 gostam de vôlei e 7 gostam dos dois. Quantas não gostam de nenhum dos dois?",["2","3","4","5"],2,"Gostam de pelo menos um: 18 + 15 - 7 = 26. Não gostam de nenhum: 30 - 26 = 4."],
+["Qual é o próximo termo: 1, 2, 6, 24, 120, ...?",["240","360","600","720"],3,"Os termos são fatoriais: 1!, 2!, 3!, 4!, 5!. O próximo é 6! = 720."],
+["Se hoje é quarta-feira, que dia será daqui a 100 dias?",["Quinta-feira","Sexta-feira","Sábado","Domingo"],1,"100 dividido por 7 deixa resto 2. Dois dias após quarta-feira é sexta-feira."],
+["Cinco máquinas produzem cinco peças em cinco minutos. Quanto tempo dez máquinas iguais levam para produzir dez peças?",["2,5 minutos","5 minutos","10 minutos","15 minutos"],1,"Cada máquina produz uma peça em cinco minutos. Dez máquinas produzem dez peças no mesmo intervalo."],
+["Qual é a negação lógica de 'Todos os livros estão na estante'?",["Nenhum livro está na estante","Todos os livros estão fora da estante","Pelo menos um livro não está na estante","A maioria dos livros está na estante"],2,"A negação de uma afirmação universal é a existência de pelo menos uma exceção."],
+["Três caixas estão etiquetadas como 'Maçãs', 'Laranjas' e 'Mistas'. Todas as etiquetas estão erradas. Retirando uma fruta de uma única caixa, qual caixa deve ser escolhida para identificar todas?",["A caixa 'Maçãs'","A caixa 'Laranjas'","A caixa 'Mistas'","Qualquer uma"],2,"A caixa etiquetada como 'Mistas' não pode ser mista, pois todas as etiquetas estão erradas. Uma fruta retirada revela seu conteúdo real e permite deduzir as outras caixas."],
+["Qual número completa a sequência: 4, 7, 13, 25, 49, ...?",["73","81","97","99"],2,"As diferenças são 3, 6, 12 e 24. A próxima é 48. Portanto, 49 + 48 = 97."],
+["Em uma competição, cada equipe joga uma vez contra todas as outras. Se existem 6 equipes, quantos jogos acontecem?",["12","15","18","30"],1,"O total de partidas é 6 × 5 ÷ 2 = 15."],
+["Se a afirmação 'Nenhum A é B' é falsa, o que podemos afirmar?",["Todos os A são B","Alguns A são B","Nenhum B é A","Todos os B são A"],1,"Se é falso que nenhum A é B, então existe pelo menos um elemento que pertence aos dois grupos."],
+["Uma senha possui três algarismos distintos, escolhidos entre 1, 2, 3 e 4. Quantas senhas diferentes podem ser formadas?",["12","18","24","36"],2,"Há 4 opções para a primeira posição, 3 para a segunda e 2 para a terceira: 4 × 3 × 2 = 24."],
+["Em uma sequência de figuras, cada figura tem o dobro de pontos da anterior. Se a primeira possui 3 pontos, quantos pontos terá a sexta?",["48","64","96","192"],2,"A sequência é 3, 6, 12, 24, 48, 96. A sexta figura tem 96 pontos."],
+["Três interruptores controlam três lâmpadas em outra sala. Você pode entrar na sala das lâmpadas apenas uma vez. Qual estratégia permite descobrir qual interruptor controla cada lâmpada, supondo que as lâmpadas aquecem?",["Ligar todos e entrar","Ligar um interruptor e entrar imediatamente","Ligar um por alguns minutos, desligá-lo, ligar outro e entrar","Não existe estratégia possível"],2,"Ligue o primeiro por alguns minutos e desligue-o; ligue o segundo e entre. A lâmpada acesa é a do segundo; a apagada e quente é a do primeiro; a apagada e fria é a do terceiro."],
+["Em uma ilha, cada pessoa sempre diz a verdade ou sempre mente. Uma pessoa afirma: 'Eu sou mentirosa'. O que podemos concluir?",["Ela diz a verdade","Ela mente","A afirmação gera contradição","Ela é verdadeira e falsa ao mesmo tempo"],2,"Se disser a verdade, seria mentirosa; se mentir, estaria dizendo a verdade sobre ser mentirosa. A afirmação é paradoxal."],
+["Se A implica B, e B implica C, então:",["C implica A","A implica C","B implica A","C implica B"],1,"A implicação é transitiva: se A leva a B e B leva a C, então A leva a C."],
+["Um relógio adianta 5 minutos a cada hora. Se foi acertado às 12h, que horário marcará quando o horário real for 18h?",["18h05","18h15","18h30","18h35"],2,"Passaram-se 6 horas. O relógio adianta 5 × 6 = 30 minutos, marcando 18h30."]]},
+"Conhecimentos gerais":{
+"Fácil":[
+["Qual é a capital do Brasil?",["São Paulo","Rio de Janeiro","Brasília","Salvador"],2,"Brasília é a capital desde 1960."],
+["Qual é o planeta mais próximo do Sol?",["Vênus","Mercúrio","Terra","Marte"],1,"Mercúrio é o primeiro planeta a partir do Sol."],
+["Em que ano os portugueses chegaram ao Brasil?",["1492","1500","1530","1822"],1,"A chegada de Cabral foi em 1500."],
+["Qual é a fórmula química da água?",["CO₂","O₂","H₂O","NaCl"],2,"Duas partes de hidrogênio e uma de oxigênio: H₂O."],
+["Quantos estados existem no Brasil?",["24","25","26","27"],2,"O Brasil possui 26 estados e o Distrito Federal."],
+["Qual é o maior planeta do Sistema Solar?",["Terra","Marte","Júpiter","Saturno"],2,"Júpiter é o maior planeta do Sistema Solar."],
+["Qual é o idioma oficial do Brasil?",["Espanhol","Português","Inglês","Francês"],1,"O português é o idioma oficial do Brasil."],
+["Qual oceano banha a costa brasileira?",["Pacífico","Índico","Atlântico","Ártico"],2,"O litoral brasileiro é banhado pelo Oceano Atlântico."],
+["Qual é o maior bioma brasileiro em extensão territorial?",["Mata Atlântica","Caatinga","Cerrado","Amazônia"],3,"A Amazônia é o maior bioma brasileiro em extensão."],
+["Em qual continente está localizado o Egito?",["Ásia","África","Europa","Oceania"],1,"O Egito está localizado no nordeste do continente africano."],
+["Qual é o principal gás presente na atmosfera terrestre?",["Oxigênio","Nitrogênio","Gás carbônico","Hidrogênio"],1,"O nitrogênio representa aproximadamente 78% da atmosfera."],
+["Quantos dias tem um ano bissexto?",["364","365","366","367"],2,"O ano bissexto possui 366 dias."],
+["Qual órgão do corpo humano é responsável por bombear o sangue?",["Pulmão","Cérebro","Coração","Fígado"],2,"O coração bombeia o sangue para todo o organismo."],
+["Qual é o símbolo químico da água?",["CO2","O2","H2O","NaCl"],2,"A fórmula química da água é H2O."],
+["Quem proclamou a Independência do Brasil?",["Dom Pedro I","Dom Pedro II","Getúlio Vargas","Tiradentes"],0,"Dom Pedro I proclamou a Independência em 7 de setembro de 1822."],
+["Qual é o maior mamífero do mundo?",["Elefante africano","Girafa","Baleia-azul","Tubarão-branco"],2,"A baleia-azul é o maior mamífero conhecido."],
+["Qual planeta é conhecido como Planeta Vermelho?",["Vênus","Marte","Mercúrio","Netuno"],1,"Marte possui uma aparência avermelhada devido aos óxidos de ferro em sua superfície."],
+["Qual é a moeda oficial do Japão?",["Dólar","Euro","Yuan","Iene"],3,"A moeda oficial japonesa é o iene."],
+["Em qual região brasileira fica o estado de São Paulo?",["Norte","Nordeste","Sudeste","Sul"],2,"São Paulo está localizado na Região Sudeste."],
+["Qual é a principal estrela do Sistema Solar?",["Lua","Sol","Sirius","Vênus"],1,"O Sol é a estrela central do Sistema Solar."],
+["Qual destes animais é um anfíbio?",["Cobra","Sapo","Águia","Cavalo"],1,"O sapo é um anfíbio, grupo que geralmente possui fases de vida na água e em terra."],
+["Qual é o nome do processo pelo qual as plantas produzem seu alimento usando luz?",["Respiração","Fermentação","Fotossíntese","Digestão"],2,"Na fotossíntese, as plantas utilizam luz, água e gás carbônico para produzir matéria orgânica."],
+["Qual é o continente onde está localizado o Brasil?",["Europa","África","América do Sul","América do Norte"],2,"O Brasil está localizado na América do Sul."]],
+"Médio":[
+["Qual gás as plantas absorvem na fotossíntese?",["Oxigênio","Gás carbônico","Nitrogênio","Hidrogênio"],1,"Absorvem CO₂ e liberam oxigênio."],
+["Quem assinou a Lei Áurea, em 1888?",["Dom Pedro II","Princesa Isabel","Getúlio Vargas","Marechal Deodoro"],1,"A Princesa Isabel, regente, assinou a abolição."],
+["Qual é o maior oceano do planeta?",["Atlântico","Índico","Ártico","Pacífico"],3,"O Pacífico é o maior e mais profundo."],
+["Qual é uma fonte de energia renovável?",["Carvão mineral","Petróleo","Solar","Gás natural"],2,"A energia solar vem de uma fonte que não se esgota."],
+["Em que ano ocorreu a Proclamação da República no Brasil?",["1822","1888","1889","1891"],2,"A República foi proclamada em 15 de novembro de 1889."],
+["Qual é a função principal da camada de ozônio?",["Produzir oxigênio","Filtrar parte da radiação ultravioleta","Aumentar a temperatura dos oceanos","Impedir a chuva"],1,"A camada de ozônio absorve grande parte da radiação ultravioleta prejudicial."],
+["Qual foi a civilização que construiu as pirâmides de Gizé?",["Romana","Grega","Egípcia","Persa"],2,"As pirâmides de Gizé foram construídas no Egito Antigo."],
+["Qual é o nome do movimento da Terra ao redor do Sol?",["Rotação","Translação","Precessão","Oscilação"],1,"A translação é o movimento da Terra ao redor do Sol."],
+["Qual é a principal função dos glóbulos vermelhos?",["Defender o organismo","Transportar oxigênio","Produzir hormônios","Coagular o sangue"],1,"Os glóbulos vermelhos transportam oxigênio por meio da hemoglobina."],
+["Qual documento estabelece os principais direitos e deveres dos cidadãos brasileiros?",["Código Civil","Constituição Federal","Código de Trânsito","Estatuto da Criança"],1,"A Constituição Federal de 1988 estabelece a organização do Estado e direitos fundamentais."],
+["Qual é o bioma característico do clima semiárido do Nordeste brasileiro?",["Pampa","Pantanal","Caatinga","Mata de Araucárias"],2,"A Caatinga é adaptada às condições de pouca chuva do semiárido."],
+["Qual destes países não faz parte da América do Sul?",["Chile","Peru","México","Argentina"],2,"O México está localizado na América do Norte."],
+["Quem escreveu 'Dom Casmurro'?",["Machado de Assis","José de Alencar","Carlos Drummond de Andrade","Clarice Lispector"],0,"Dom Casmurro é um romance de Machado de Assis, publicado em 1899."],
+["Qual é a unidade de medida da corrente elétrica?",["Volt","Watt","Ampere","Ohm"],2,"A corrente elétrica é medida em ampères."],
+["Qual órgão é responsável pela produção de insulina?",["Rim","Pâncreas","Estômago","Baço"],1,"O pâncreas produz insulina, hormônio que ajuda a regular a glicose no sangue."],
+["Em qual período histórico ocorreu a Revolução Industrial?",["Idade Antiga","Idade Média","Idade Moderna","Idade Contemporânea"],3,"A Revolução Industrial começou na segunda metade do século XVIII, período geralmente incluído na transição para a Idade Contemporânea."],
+["Qual é a principal fonte de energia utilizada pela maioria dos ecossistemas?",["Lua","Sol","Vento","Calor interno da Terra"],1,"A energia solar sustenta a maioria das cadeias alimentares por meio da fotossíntese."],
+["O que significa a sigla IBGE?",["Instituto Brasileiro de Geografia e Estatística","Instituto Brasileiro de Gestão Econômica","Instituição Brasileira de Geologia e Estatística","Instituto de Biologia Geral e Educação"],0,"IBGE significa Instituto Brasileiro de Geografia e Estatística."],
+["Qual é o principal objetivo da vacinação?",["Curar todas as doenças","Estimular o sistema imunológico","Substituir os antibióticos","Eliminar a necessidade de higiene"],1,"As vacinas estimulam o sistema imunológico a reconhecer e combater determinados agentes infecciosos."],
+["Qual é o nome do processo de passagem da água do estado líquido para o gasoso?",["Condensação","Solidificação","Evaporação","Fusão"],2,"A evaporação é a passagem do estado líquido para o gasoso."],
+["Qual país sediou os Jogos Olímpicos de 2016?",["China","Reino Unido","Brasil","Japão"],2,"Os Jogos Olímpicos de 2016 foram realizados no Rio de Janeiro, Brasil."],
+["Qual é o órgão responsável por filtrar o sangue e produzir a urina?",["Pulmão","Rim","Fígado","Coração"],1,"Os rins filtram o sangue e participam da produção da urina."],
+["O que é o desmatamento?",["Plantio de árvores","Remoção da vegetação de uma área","Recuperação de florestas","Proteção de nascentes"],1,"Desmatamento é a retirada ou destruição da cobertura vegetal de uma área."],
+["Qual é a principal função do poder Legislativo?",["Executar as leis","Julgar conflitos","Elaborar e aprovar leis","Comandar as Forças Armadas"],2,"O Poder Legislativo tem como funções centrais elaborar leis e fiscalizar o Executivo."]],
+"Difícil":[
+["A Era Vargas ocorreu entre:",["1889 e 1930","1930 e 1945","1945 e 1964","1964 e 1985"],1,"Getúlio Vargas governou de 1930 a 1945 (Estado Novo incluso)."],
+["Qual gás da atmosfera filtra grande parte dos raios ultravioleta?",["Ozônio","Metano","Nitrogênio","Argônio"],0,"A camada de ozônio protege a Terra da radiação UV."],
+["Em qual país começou a Revolução Industrial?",["França","Alemanha","Inglaterra","Estados Unidos"],2,"Começou na Inglaterra, por volta do século XVIII."],
+["Qual bioma tem árvores de troncos retorcidos e solo ácido?",["Pampa","Cerrado","Pantanal","Caatinga"],1,"Características típicas do Cerrado."],
+["Qual tratado encerrou oficialmente a Primeira Guerra Mundial entre a Alemanha e os Aliados?",["Tratado de Tordesilhas","Tratado de Versalhes","Tratado de Paris","Tratado de Madri"],1,"O Tratado de Versalhes foi assinado em 1919 e estabeleceu condições de paz para a Alemanha."],
+["Qual é a principal diferença entre tempo atmosférico e clima?",["São sinônimos","Tempo é uma condição momentânea; clima é um padrão de longo prazo","Clima muda a cada hora","Tempo só se refere à temperatura"],1,"Tempo descreve condições atmosféricas em curto prazo; clima representa padrões observados por longos períodos."],
+["Qual organela celular é conhecida como responsável pela produção de grande parte da energia da célula?",["Ribossomo","Lisossomo","Mitocôndria","Complexo golgiense"],2,"As mitocôndrias realizam etapas da respiração celular e produzem ATP."],
+["Qual foi uma das principais consequências da Lei Áurea, assinada em 1888?",["Proclamação da República","Abolição legal da escravidão no Brasil","Independência do Brasil","Fim do período colonial"],1,"A Lei Áurea aboliu legalmente a escravidão no Brasil em 13 de maio de 1888."],
+["O que caracteriza uma fonte de energia renovável?",["É sempre gratuita","Sua reposição ocorre naturalmente em escala compatível com o uso","Não causa nenhum impacto ambiental","Existe apenas em países tropicais"],1,"Fontes renováveis são naturalmente repostas, embora possam causar impactos ambientais."],
+["Qual fenômeno está relacionado ao desvio da luz ao passar de um meio para outro?",["Reflexão","Refração","Difração","Absorção"],1,"A refração ocorre quando a luz muda de velocidade e direção ao atravessar meios diferentes."],
+["Qual é a função dos decompositores em um ecossistema?",["Produzir luz","Transformar matéria orgânica e reciclar nutrientes","Impedir a fotossíntese","Consumir apenas animais vivos"],1,"Fungos e bactérias decompositores reciclam nutrientes ao decompor matéria orgânica."],
+["Qual foi o principal objetivo da criação da Organização das Nações Unidas (ONU), em 1945?",["Criar uma moeda mundial","Promover a paz e a cooperação internacional","Substituir todos os governos","Controlar o comércio mundial"],1,"A ONU foi criada após a Segunda Guerra Mundial para promover a paz, a segurança e a cooperação entre países."],
+["Qual estrutura celular controla a entrada e a saída de substâncias?",["Parede celular","Membrana plasmática","Núcleo","Citoplasma"],1,"A membrana plasmática regula a troca de substâncias entre a célula e o ambiente."],
+["O que é o efeito estufa natural?",["Um fenômeno exclusivamente artificial","Um processo em que gases atmosféricos retêm parte do calor","A destruição completa da camada de ozônio","O resfriamento dos oceanos"],1,"Gases de efeito estufa retêm parte da radiação infravermelha, ajudando a manter a temperatura terrestre adequada à vida."],
+["Qual movimento artístico e cultural valorizou a razão, a ciência e a crítica ao absolutismo no século XVIII?",["Romantismo","Iluminismo","Barroco","Surrealismo"],1,"O Iluminismo defendia o uso da razão e influenciou transformações políticas e sociais."],
+["Qual é a principal característica da democracia representativa?",["O governante decide sem eleições","Os cidadãos elegem representantes para tomar decisões políticas","Não existem partidos políticos","As leis são definidas apenas pelo Judiciário"],1,"Na democracia representativa, a população escolhe representantes por meio de eleições."],
+["Qual é a relação entre latitude e clima?",["A latitude não influencia o clima","A latitude influencia a incidência de energia solar e as temperaturas","Quanto maior a latitude, maior sempre será a temperatura","A latitude determina apenas a quantidade de chuva"],1,"A latitude influencia o ângulo de incidência solar e, consequentemente, os padrões de temperatura."],
+["Qual processo evolutivo favorece características hereditárias que aumentam a sobrevivência e a reprodução?",["Seleção natural","Combustão","Fermentação","Erosão"],0,"A seleção natural favorece características hereditárias que aumentam o sucesso reprodutivo em determinado ambiente."],
+["Qual é a função dos glóbulos brancos no organismo humano?",["Transportar oxigênio","Participar da defesa imunológica","Produzir bile","Regular os batimentos cardíacos"],1,"Os glóbulos brancos atuam na defesa do organismo contra agentes infecciosos."],
+["Qual foi uma característica marcante do período conhecido como Estado Novo no Brasil?",["Democracia direta","Governo autoritário de Getúlio Vargas","Monarquia parlamentarista","Independência política"],1,"O Estado Novo, entre 1937 e 1945, foi uma ditadura liderada por Getúlio Vargas."],
+["O que é biodiversidade?",["A quantidade de água de um ambiente","A variedade de formas de vida e ecossistemas","A quantidade de minerais no solo","O número de cidades de uma região"],1,"Biodiversidade é a variedade de genes, espécies e ecossistemas."],
+["Qual é a função dos produtores em uma cadeia alimentar?",["Consumir todos os outros organismos","Produzir matéria orgânica a partir de fontes de energia","Decompor apenas animais mortos","Controlar a temperatura do ambiente"],1,"Produtores, como plantas e algas, formam matéria orgânica, geralmente por fotossíntese."],
+["Qual princípio físico afirma que a energia não pode ser criada nem destruída, apenas transformada?",["Lei da gravitação","Lei da conservação da energia","Princípio da inércia","Lei de Coulomb"],1,"A conservação da energia estabelece que a energia total de um sistema isolado permanece constante."],
+["Qual é a principal finalidade do sistema de freios ABS em veículos?",["Aumentar a potência do motor","Evitar o travamento das rodas durante frenagens intensas","Reduzir o consumo de combustível","Substituir os pneus"],1,"O ABS ajuda a evitar o travamento das rodas, permitindo maior controle da direção durante uma frenagem."]]}
+};
+const MATS=Object.keys(D),LVS=["Fácil","Médio","Difícil"];
+const DESC={"Português":"gramática e texto","Matemática":"contas e problemas","Raciocínio lógico":"sequências e lógica","Conhecimentos gerais":"ciências, história, geografia"};
+const $=id=>document.getElementById(id),L="ABCD";
+let mat=null,lvl=null,Qs=[],i=0,sel=null,ans=[],t0=0,tick;
+
+function mk(parent,label,sub,cls,fn){const b=document.createElement("button");b.type="button";b.className="pick "+(cls||"");b.setAttribute("aria-pressed","false");b.innerHTML=label+(sub?"<small>"+sub+"</small>":"");b.onclick=fn;parent.appendChild(b);return b}
+function press(box,btn){[...box.children].forEach(x=>x.setAttribute("aria-pressed",x===btn?"true":"false"))}
+const matBtns={};
+MATS.forEach(m=>{matBtns[m]=mk($("mats"),m,DESC[m],"",()=>{mat=m;press($("mats"),matBtns[m]);chk()})});
+matBtns["Todas"]=mk($("mats"),"Todas as matérias","12 questões misturadas","all",()=>{mat="Todas";press($("mats"),matBtns["Todas"]);chk()});
+const lvBtns={};
+LVS.forEach(l=>{lvBtns[l]=mk($("lvs"),l,"","",()=>{lvl=l;press($("lvs"),lvBtns[l]);chk()})});
+function chk(){$("go").disabled=!(mat&&lvl)}
+function show(id){
+  ["menu","quiz","result","hist","detail","settings"].forEach(s=>$(s).classList.toggle("hide",s!==id));
+  $("topbar").classList.toggle("hide",id==="quiz");
+  const cur={menu:"menu",result:"menu",hist:"hist",detail:"hist",settings:"settings"}[id];
+  document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-current",b.dataset.go===cur?"page":"false"));
+  window.scrollTo(0,0);
+}
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ---------- Armazenamento no navegador (localStorage) ---------- */
+const KEY="simuladoEtecHistorico";
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||[]}catch(e){return[]}}
+function save(h){try{localStorage.setItem(KEY,JSON.stringify(h.slice(-200)));return true}catch(e){return false}}
+try{localStorage.setItem("_t","1");localStorage.removeItem("_t")}catch(e){$("nostore").classList.remove("hide")}
+
+/* ---------- Histórico e gráfico ---------- */
+function fdate(t){const d=new Date(t);return d.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"})+" "+d.toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit"})}
+$("fm").innerHTML='<option value="">Todas as provas</option>'+MATS.map(m=>"<option>"+m+"</option>").join("")+'<option value="Todas">Todas as matérias (misturada)</option>';
+$("fl").innerHTML='<option value="">Todos os níveis</option>'+LVS.map(l=>"<option>"+l+"</option>").join("");
+/* ---------- Diagnóstico: assuntos e dicas de estudo ---------- */
+const TOPICS={
+"Português":[
+[/regência|crase|livro ___ professora/,"Regência e crase","Revise quais verbos pedem preposição (obedecer a, assistir a, preferir uma coisa a outra) e a regra da crase: ela acontece quando a preposição “a” se junta ao artigo “a”. Dica: troque a palavra feminina por uma masculina; se aparecer “ao”, use crase."],
+[/concordância|complete: “(ela|nós)|^assinale a frase correta|haver|houve|haja/,"Concordância e conjugação verbal","Reveja como o verbo concorda com o sujeito e os casos especiais: verbos impessoais (haver no sentido de existir, fazer indicando tempo e verbos de chuva ficam no singular) e expressões como “a maioria” e “mais de um”. Treine conjugando verbos no presente e no passado."],
+[/pontuação|vírgula/,"Pontuação","Revise o uso da vírgula: ela separa vocativo, aposto e orações deslocadas, e não se coloca entre sujeito e verbo. Dica: leia a frase em voz alta e note onde fazem pausas naturais."],
+[/acentuad|escrita corretamente|grafia|acento|complete: “ele é um/,"Ortografia, acentuação e uso de palavras","Estude as regras de acentuação (oxítonas, paroxítonas e proparoxítonas), as mudanças do Novo Acordo Ortográfico e pares como mal/mau. Dica: mantenha uma lista com as palavras que você erra e releia sempre."],
+[/sílaba|oxítona|paroxítona|proparoxítona|dígrafo|encontro consonantal/,"Sílabas, tonicidade e fonética","Reveja a separação de sílabas, a posição da sílaba tônica (oxítona, paroxítona, proparoxítona), dígrafos e encontros consonantais. Dica: pronuncie a palavra devagar e marque qual sílaba soa mais forte."],
+[/plural|feminino|aumentativo|diminutivo/,"Flexão e formação de palavras","Revise o plural (palavras terminadas em -ão, -l, -m), o feminino e os graus aumentativo e diminutivo. Dica: faça uma lista das exceções mais comuns e treine com exemplos."],
+[/sinônimo|antônimo|equivale a|ao encontro de/,"Vocabulário e sentido das palavras","Amplie o vocabulário estudando sinônimos, antônimos e expressões. Dica: ao ler, anote palavras novas e escreva uma frase com cada uma."],
+[/figura de linguagem|metáfora|hipérbole|ocorre:|contém:/,"Figuras de linguagem","Reveja metáfora, comparação, hipérbole, personificação, ironia, antítese e eufemismo. Dica: monte um quadro com a definição e um exemplo de cada figura."],
+[/\bvoz\b|\bativa\b|\bpassiva\b/,"Vozes verbais","Reveja a voz ativa (o sujeito pratica a ação), a passiva (o sujeito recebe a ação) e a reflexiva. Dica: transforme frases de uma voz para a outra e identifique o agente da passiva."],
+[/o termo|sujeito|predicado|predicativo|aposto|objeto|adjunto|vocativo|com frieza/,"Termos da oração (sintaxe)","Reveja sujeito, predicado, objeto direto e indireto, adjunto, aposto, predicativo e agente da passiva. Dica: primeiro encontre o verbo e depois pergunte “quem?” para achar o sujeito."],
+[/conjunção|oração|introduz|expressa|portanto|porque|embora|apesar|construção|estabelece/,"Orações e conjunções","Estude as conjunções e a ideia que cada uma expressa (adversativa, concessiva, causal, conclusiva, condicional, consecutiva, proporcional) e a diferença entre orações coordenadas e subordinadas. Dica: troque a conjunção por outra do mesmo grupo para testar o sentido."],
+[/se eu tivesse|há:/,"Tempos e modos verbais","Reveja os tempos e modos do verbo, em especial o subjuntivo e os períodos com “se” (hipótese realizada e não realizada). Dica: monte uma tabela com os tempos de um verbo regular e de um irregular."],
+[/discurso|ambiguidade|colocação pronominal|paralelismo/,"Estrutura, clareza e interpretação de frases","Reveja discurso direto e indireto, colocação dos pronomes, paralelismo e ambiguidade. Dica: reescreva frases confusas mantendo a mesma estrutura nas ideias em lista e sem duplo sentido."],
+[/pronome|“que”|que é:|onde|cujo|substantivo|adjetivo|verbo|advérbio|qual palavra é|cedo/,"Pronomes e classes de palavras","Revise as classes de palavras (substantivo, adjetivo, verbo, advérbio, pronome) e os pronomes relativos (que, cujo, onde). Dica: observe a função da palavra na frase, não só a forma."]
+],
+"Matemática":[
+[/juros?|investimento|montante|composto|ao ano/,"Juros e crescimento percentual","Revise juros simples (J = C · i · t) e compostos (multiplicação sucessiva). Dica: no composto, multiplique o valor por 1 + taxa a cada período."],
+[/%|porcentagem/,"Porcentagem e variações de preço","Treine calcular porcentagens (10%, 25%, 50%) de cabeça e entender aumentos e descontos sucessivos, que não se somam. Dica: aumento de 20% é multiplicar por 1,20; desconto de 20% é multiplicar por 0,80."],
+[/perímetro|área|volume|ângulo|triângulo|círculo|cubo|retângulo|hipotenusa|cateto|escada|graus/,"Geometria","Revise perímetro, área, volume, a soma dos ângulos de um triângulo e o Teorema de Pitágoras. Dica: monte uma folha de fórmulas e desenhe a figura antes de calcular."],
+[/\d[²³]|raiz quadrada/,"Potências e raízes","Revise as propriedades das potências (na multiplicação somam-se os expoentes, na divisão subtraem-se) e as raízes exatas. Dica: decore os quadrados perfeitos até 15 ou 20."],
+[/equação|qual é x\?|valor de [xy]|discriminante|raízes|resolva: 2\(|resolva: x²|x \+ y|3x/,"Equações e sistemas","Treine isolar a incógnita nas equações do 1º grau, resolver sistemas e equações do 2º grau (soma e produto, Bhaskara e discriminante). Dica: confira sempre substituindo o valor encontrado."],
+[/\d\/\d|fração|decimal|\d,\d|qual número é maior/,"Frações e números decimais","Revise simplificação, soma de frações, fração de um número e operações com decimais. Dica: transforme frações em decimais para comparar valores."],
+[/trabalhadores|torneira|máquinas|velocidade|consumo|km|regra de três|reservatório/,"Razão, proporção e regra de três","Reveja grandezas direta e inversamente proporcionais. Dica: mais operários, menos dias (inversa); mais litros, mais tempo (direta). Monte uma tabela antes de calcular."],
+[/média|probabilidade/,"Média e probabilidade","Reveja a média aritmética (soma ÷ quantidade) e a probabilidade (casos favoráveis ÷ casos possíveis). Dica: se você conhece a média, a soma total é média × quantidade."],
+[/sequência/,"Sequências numéricas","Treine achar o padrão: diferença constante, diferenças que crescem, multiplicação ou soma dos termos anteriores. Dica: calcule as diferenças entre termos vizinhos."]
+],
+"Raciocínio lógico":[
+[/oposto|diferente dos demais|não pertence|elemento é diferente/,"Classificação, oposição e intrusos","Treine achar o critério em comum entre os itens (categoria, forma, propriedade numérica) para identificar o diferente. Dica: diga em voz alta a regra do grupo antes de olhar as alternativas."],
+[/sequência|próximo|qual letra|está faltando|completa/,"Sequências e padrões","Treine descobrir o padrão: soma ou multiplicação constante, diferenças que crescem, quadrados e Fibonacci. Dica: escreva as diferenças entre os termos vizinhos."],
+[/pessoas fazem|máquinas|lápis custam|dobro da idade|trabalho em|o pai tem/,"Proporção e problemas de raciocínio","Revise regra de três e a ideia de taxa por unidade (quanto cada máquina ou pessoa faz por hora). Dica: ache o valor de uma unidade e depois multiplique."],
+[/gostam|combina|aperto|cumprimenta|jogos|equipes|senha|bolas|apertam/,"Contagem, combinações e conjuntos","Reveja o princípio multiplicativo (4 × 3 = 12 combinações), o número de pares (n · (n − 1) ÷ 2) e conjuntos com diagrama de Venn. Dica: desenhe os conjuntos e subtraia a interseção."],
+[/código|a = 1|interruptores|caixas|ilha|profiss|família|cantos|mãe de/,"Enigmas e deduções","Treine eliminar possibilidades e organizar os dados em uma tabela. Dica: comece pelas informações mais restritivas e vá riscando o que é impossível."],
+[/mais alto|chegou antes|fila|ordem|maior que|colocado|\bposição\b/,"Ordem, comparação e posição","Treine montar a ordem desenhando uma linha com os nomes. Dica: transforme cada frase em uma relação (A > B) e junte todas."],
+[/todos os|todos do grupo|todo |nenhum|alguns|então|implica|negação|proposição|afirmação|conclusão|mentirosa/,"Lógica e argumentos","Reveja afirmações com todo, nenhum e algum, a negação (a negação de “todos” é “pelo menos um não”), condicionais (se… então) e a contraposição. Dica: desenhe diagramas de conjuntos."],
+[/hoje é|ontem foi|semana|relógio|ponteiros|dias/,"Dias, datas e relógio","Treine contas com o resto da divisão por 7 para dias da semana e o ângulo dos ponteiros do relógio. Dica: divida os dias por 7 e use apenas o resto."]
+],
+"Conhecimentos gerais":[
+[/independência|república|lei áurea|estado novo|vargas|dom pedro|portugueses/,"História do Brasil","Revise a linha do tempo: chegada dos portugueses (1500), Independência (1822), Lei Áurea (1888), República (1889) e Era Vargas (1930–1945). Dica: associe cada fato a um personagem e a uma data."],
+[/pirâmides|revolução industrial|guerra mundial|tratado|nações unidas|\bonu\b|iluminismo|movimento artístico|absolutismo/,"História geral","Revise as grandes civilizações (Egito, Grécia, Roma), a Revolução Industrial, o Iluminismo, as guerras mundiais e a criação da ONU. Dica: associe cada período a suas causas e consequências."],
+[/constituição|poder legislativo|democracia|direitos e deveres/,"Cidadania e política","Revise a Constituição de 1988, os três poderes (Executivo, Legislativo e Judiciário) e o que é democracia. Dica: para cada poder, anote quem o exerce e qual é a sua função."],
+[/olímpic|escreveu|moeda|idioma|ibge/,"Cultura, sociedade e atualidades","Acompanhe notícias e curiosidades (esportes, literatura, economia) e revise autores brasileiros clássicos. Dica: leia um resumo de notícias por dia."],
+[/estados|capital|região|bioma|oceano banha/,"Geografia do Brasil","Revise capitais, regiões, estados e os biomas brasileiros (Amazônia, Cerrado, Caatinga, Mata Atlântica, Pampa e Pantanal) com clima e vegetação. Dica: treine com um mapa mudo."],
+[/continente|oceano|clima|latitude|tempo atmosférico|desmatamento|efeito estufa|ozônio|biodiversidade|renovável|atmosfera|países/,"Geografia, clima e meio ambiente","Revise continentes e oceanos, diferença entre tempo e clima, latitude, efeito estufa, camada de ozônio, desmatamento e energias renováveis. Dica: relacione cada problema ambiental à sua causa e à sua solução."],
+[/planeta|estrela|sistema solar|translação|\bsol\b/,"Astronomia e Sistema Solar","Revise a ordem dos planetas, rotação e translação e o papel do Sol. Dica: crie uma frase para decorar a ordem dos planetas."],
+[/órgão|corpo humano|célula|celular|organela|glóbulos|vacina|insulina|mamífero|anfíbio|animais|evolutiv|decompositores|produtores|cadeia alimentar|ecossistema|fotossíntese|plantas|membrana/,"Biologia e corpo humano","Revise órgãos e suas funções, células e organelas, sangue, sistema imunológico, fotossíntese e cadeias alimentares. Dica: faça um resumo com cada estrutura e a sua função."],
+[/símbolo químico|fórmula química|corrente elétrica|desvio da luz|princípio físico|estado líquido|freios/,"Física e Química","Revise os estados físicos da matéria e suas mudanças, fórmulas químicas básicas (H₂O, CO₂), eletricidade, luz (reflexão e refração) e conservação da energia. Dica: associe cada conceito a um exemplo do cotidiano."]
+]
+};
+const TOPICO_PADRAO={"Português":"Revise a gramática e a interpretação de texto desta matéria e refaça as questões que errou.","Matemática":"Reforce as quatro operações, a ordem das operações (parênteses, depois multiplicação e divisão, depois soma e subtração) e a interpretação de enunciados. Dica: sublinhe os dados e a pergunta antes de calcular.","Raciocínio lógico":"Treine com desafios de lógica e sequências e refaça as questões que errou, explicando o raciocínio em voz alta.","Conhecimentos gerais":"Revise os assuntos de ciências, história e geografia desta matéria e refaça as questões que errou."};
+const ROTULO_PADRAO={"Português":"Gramática geral","Matemática":"Operações e problemas do dia a dia","Raciocínio lógico":"Raciocínio geral","Conhecimentos gerais":"Conhecimentos diversos"};
+function topicOf(area,q){
+  const t=String(q).toLowerCase();
+  for(const [re,n,d] of (TOPICS[area]||[]))if(re.test(t))return{n,d};
+  return{n:ROTULO_PADRAO[area]||("Outros assuntos de "+area),d:TOPICO_PADRAO[area]||"Revise esta matéria e refaça as questões que errou."};
+}
+function topicStats(items){
+  const m={};
+  items.forEach(it=>{const t=topicOf(it.a,it.q),k=it.a+"|"+t.n,r=m[k]=m[k]||{n:t.n,d:t.d,a:it.a,ok:0,t:0};r.t++;if(it.ok)r.ok++});
+  return Object.values(m);
+}
+function studyHTML(items){
+  const st=topicStats(items);
+  const weak=st.filter(r=>r.ok<r.t).sort((x,y)=>(y.t-y.ok)-(x.t-x.ok)||(x.ok/x.t)-(y.ok/y.t));
+  const strong=st.filter(r=>r.ok===r.t);
+  let h="<h2>O que estudar</h2>";
+  if(!weak.length)h+="<p>Você acertou todos os assuntos desta prova. Para continuar evoluindo, tente um nível acima ou outra matéria.</p>";
+  else weak.forEach((r,i)=>{const e=r.t-r.ok;h+='<div class="study"><div class="lab"><strong>'+(i+1)+". "+esc(r.n)+'</strong><span class="pill">'+e+" erro"+(e>1?"s":"")+" em "+r.t+'</span></div><div class="muted">'+esc(r.a)+"</div><p>"+esc(r.d)+"</p></div>"});
+  if(strong.length)h+='<p class="muted"><strong>Pontos fortes:</strong> '+strong.map(r=>esc(r.n)).join(", ")+".</p>";
+  return h;
+}
+function focusHTML(list){
+  const st=topicStats(list.flatMap(r=>r.a.map(q=>({a:q.a,q:q.q,ok:q.ok}))));
+  const w=st.filter(r=>r.t>=2&&r.ok<r.t).sort((x,y)=>(x.ok/x.t)-(y.ok/y.t)||y.t-x.t).slice(0,3);
+  if(!w.length)return "";
+  return "<h2>Onde focar os estudos</h2>"+w.map(r=>'<div class="study"><div class="lab"><strong>'+esc(r.n)+'</strong><span class="pill">'+Math.round(r.ok/r.t*100)+'% de acerto</span></div><div class="muted">'+esc(r.a)+" · "+r.t+" questões</div><p>"+esc(r.d)+"</p></div>").join("");
+}
+
+function chart(list){
+  const pts=list.slice(-30),W=600,H=240,pl=40,pr=16,pt=14,pb=30;
+  const x=k=>pts.length<2?pl+(W-pl-pr)/2:pl+k*(W-pl-pr)/(pts.length-1);
+  const y=p=>pt+(100-p)*(H-pt-pb)/100;
+  const f=d=>new Date(d).toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"});
+  let s='<svg class="chart" viewBox="0 0 '+W+" "+H+'" role="img" aria-label="Gráfico da evolução das notas">';
+  [0,25,50,75,100].forEach(g=>{s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+y(g)+'" y2="'+y(g)+'" class="gl"/><text x="'+(pl-6)+'" y="'+(y(g)+4)+'" text-anchor="end" font-size="12" class="tx">'+g+"%</text>"});
+  s+='<polyline class="ln" fill="none" stroke-width="3" stroke-linejoin="round" points="'+pts.map((r,k)=>x(k)+","+y(r.p)).join(" ")+'"/>';
+  pts.forEach((r,k)=>{s+='<circle cx="'+x(k)+'" cy="'+y(r.p)+'" r="5" class="dt"><title>'+fdate(r.d)+": "+r.p+"%</title></circle>"});
+  s+='<text x="'+pl+'" y="'+(H-8)+'" font-size="12" class="tx">'+f(pts[0].d)+"</text>";
+  if(pts.length>1)s+='<text x="'+(W-pr)+'" y="'+(H-8)+'" text-anchor="end" font-size="12" class="tx">'+f(pts[pts.length-1].d)+"</text>";
+  return s+'</svg><p class="muted">Evolução da porcentagem de acertos (últimas '+pts.length+" provas). Use os filtros acima para comparar provas do mesmo tipo e nível.</p>";
+}
+function renderHist(){
+  const fm=$("fm").value,fl=$("fl").value;
+  const list=load().filter(r=>(!fm||r.m===fm)&&(!fl||r.l===fl));
+  if(!list.length){$("hbody").innerHTML="<p>Nenhuma prova encontrada. Faça um simulado e o resultado aparece aqui.</p>";return}
+  const avg=Math.round(list.reduce((s,r)=>s+r.p,0)/list.length),best=Math.max(...list.map(r=>r.p));
+  let h='<div class="stats"><div class="stat"><b>'+list.length+'</b>provas</div><div class="stat"><b>'+avg+'%</b>média</div><div class="stat"><b>'+best+'%</b>melhor nota</div></div>'+chart(list)+focusHTML(list)+"<h2>Provas feitas</h2>";
+  list.slice().reverse().forEach(r=>{h+='<button class="hist" data-d="'+r.d+'"><span>'+fdate(r.d)+" · "+r.m+" · "+r.l+'</span><span class="pill">'+r.t+"/"+r.n+" ("+r.p+"%)</span></button>"});
+  $("hbody").innerHTML=h;
+  $("hbody").querySelectorAll(".hist").forEach(b=>b.onclick=()=>detail(+b.dataset.d));
+}
+function detail(d){
+  const r=load().find(x=>x.d===d);if(!r)return;
+  let h="<h1>Prova de "+fdate(r.d)+'</h1><p class="muted">'+r.m+" · nível "+r.l+" · tempo "+fmt(r.s)+'</p><div class="score">'+r.t+"/"+r.n+'</div><p class="level">'+r.p+"% de acertos</p>"+studyHTML(r.a)+"<h2>Suas respostas</h2>";
+  r.a.forEach(q=>{h+='<div class="rev"><strong>'+esc(q.q)+"</strong><br>"+(q.ok?'<span style="color:var(--ok);font-weight:700">Acertou:</span> '+esc(q.c):'<span style="color:var(--bad);font-weight:700">Errou.</span> Você marcou: '+esc(q.m)+"<br>Correta: "+esc(q.c))+'<br><span class="muted">'+esc(q.e)+"</span></div>"});
+  h+='<div class="actions"><button id="dback" class="ghost">Voltar ao histórico</button></div>';
+  $("detail").innerHTML=h;$("dback").onclick=()=>{renderHist();show("hist")};show("detail");
+}
+$("fm").onchange=renderHist;$("fl").onchange=renderHist;
+$("histbtn").onclick=()=>{renderHist();show("hist")};
+$("hback").onclick=()=>show("menu");
+
+/* ---------- Configurações (tema, texto, cronômetro, backup) ---------- */
+const CFG_KEY="simuladoEtecConfig";
+let cfg=Object.assign({tema:"auto",tamanho:"normal",timer:"sim"},(()=>{try{return JSON.parse(localStorage.getItem(CFG_KEY))||{}}catch(e){return{}}})());
+function saveCfg(){try{localStorage.setItem(CFG_KEY,JSON.stringify(cfg))}catch(e){}}
+const OPTS=[["tema","themeBtns",[["claro","Claro"],["escuro","Escuro"],["auto","Automático"]]],["tamanho","sizeBtns",[["normal","Normal"],["grande","Grande"]]],["timer","timerBtns",[["sim","Mostrar"],["nao","Esconder"]]]];
+OPTS.forEach(([k,id,list])=>list.forEach(([v,l])=>{const b=mk($(id),l,"","",()=>{cfg[k]=v;saveCfg();applyCfg()});b.dataset.k=k;b.dataset.v=v}));
+function applyCfg(){
+  const dark=cfg.tema==="escuro"||(cfg.tema==="auto"&&matchMedia("(prefers-color-scheme: dark)").matches);
+  const r=document.documentElement;
+  r.dataset.theme=dark?"dark":"light";r.style.colorScheme=dark?"dark":"light";r.dataset.size=cfg.tamanho;
+  $("timer").classList.toggle("hide",cfg.timer!=="sim");
+  document.querySelectorAll("#settings .pick").forEach(b=>b.setAttribute("aria-pressed",cfg[b.dataset.k]===b.dataset.v?"true":"false"));
+}
+try{matchMedia("(prefers-color-scheme: dark)").addEventListener("change",applyCfg)}catch(e){}
+applyCfg();show("menu");$("ano").textContent=new Date().getFullYear();
+const LOGO="data:image/png;base64,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";document.querySelectorAll("img.lg").forEach(i=>{i.src=LOGO});
+function renderSet(){
+  const h=load(),avg=h.length?Math.round(h.reduce((s,r)=>s+r.p,0)/h.length):0,best=h.length?Math.max(...h.map(r=>r.p)):0;
+  $("setstats").innerHTML='<div class="stat"><b>'+h.length+'</b>provas salvas</div><div class="stat"><b>'+avg+'%</b>média</div><div class="stat"><b>'+best+'%</b>melhor nota</div>';
+}
+$("seeprog").onclick=()=>{renderHist();show("hist")};
+$("wipe").onclick=()=>{if(confirm("Apagar TODO o progresso deste aparelho? Isso não pode ser desfeito.")){try{localStorage.removeItem(KEY)}catch(e){}renderSet()}};
+$("exp").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(load())],{type:"application/json"}));a.download="progresso-simulado-etec.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+$("impbtn").onclick=()=>$("imp").click();
+$("imp").onchange=e=>{
+  const f=e.target.files[0];if(!f)return;const rd=new FileReader();
+  rd.onload=()=>{try{
+    const arr=JSON.parse(rd.result);if(!Array.isArray(arr))throw 0;
+    const cur=load(),ids=new Set(cur.map(x=>x.d));
+    const ok=x=>x&&[x.d,x.t,x.n,x.p,x.s].every(Number.isFinite)&&(x.m==="Todas"||MATS.includes(x.m))&&LVS.includes(x.l)&&Array.isArray(x.a)&&x.a.every(q=>q&&typeof q.q==="string"&&typeof q.c==="string"&&typeof q.e==="string");
+    let add=0;arr.forEach(x=>{if(ok(x)&&!ids.has(x.d)){cur.push(x);ids.add(x.d);add++}});
+    cur.sort((a,b)=>a.d-b.d);save(cur);renderSet();alert(add+" prova(s) importada(s).");
+  }catch(err){alert("Arquivo inválido.")}};
+  rd.readAsText(f);e.target.value="";
+};
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{const g=b.dataset.go;if(g==="hist")renderHist();if(g==="settings")renderSet();show(g)});
+$("hclear").onclick=()=>{if(confirm("Apagar todo o histórico deste aparelho? Isso não pode ser desfeito.")){try{localStorage.removeItem(KEY)}catch(e){}renderHist()}};
+function fmt(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+const shuf=a=>a.map(x=>[Math.random(),x]).sort((p,q)=>p[0]-q[0]).map(p=>p[1]);
+function prep(a,q){const idx=shuf([0,1,2,3]);return{a,q:q[0],o:idx.map(k=>q[1][k]),c:idx.indexOf(q[2]),e:q[3]}}
+
+$("go").onclick=()=>{
+  const areas=mat==="Todas"?MATS:[mat];
+  const n=mat==="Todas"?3:4;
+  Qs=shuf(areas.flatMap(a=>shuf(D[a][lvl]).slice(0,n).map(q=>prep(a,q))));
+  i=0;ans=[];t0=Date.now();clearInterval(tick);
+  tick=setInterval(()=>{$("timer").textContent=fmt(Math.round((Date.now()-t0)/1000))},1000);
+  show("quiz");render();
+};
+$("quit").onclick=()=>{clearInterval(tick);show("menu")};
+function render(){
+  const q=Qs[i];sel=null;
+  $("count").textContent=mat+" · "+lvl+" · "+(i+1)+"/"+Qs.length;
+  $("prog").style.width=(i/Qs.length*100)+"%";
+  $("area").textContent=q.a;$("qtext").textContent=q.q;$("opts").innerHTML="";
+  q.o.forEach((t,k)=>{
+    const b=document.createElement("button");b.className="opt";b.type="button";
+    b.innerHTML='<span class="bub">'+L[k]+'</span><span></span>';b.lastChild.textContent=t;
+    b.onclick=()=>{sel=k;[...$("opts").children].forEach((x,j)=>x.classList.toggle("sel",j===k));$("confirm").disabled=false};
+    $("opts").appendChild(b);
+  });
+  $("fb").classList.add("hide");$("next").classList.add("hide");
+  $("confirm").classList.remove("hide");$("confirm").disabled=true;
+  $("next").textContent=i===Qs.length-1?"Ver resultado":"Próxima questão";
+}
+$("confirm").onclick=()=>{
+  if(sel===null)return;const q=Qs[i];ans[i]=sel;
+  [...$("opts").children].forEach((x,j)=>{x.disabled=true;x.classList.remove("sel");if(j===q.c)x.classList.add("right");else if(j===sel)x.classList.add("wrong")});
+  $("fb").textContent=(sel===q.c?"Correto. ":"Resposta certa: "+L[q.c]+". ")+q.e;
+  $("fb").classList.remove("hide");$("confirm").classList.add("hide");$("next").classList.remove("hide");$("next").focus();
+};
+$("next").onclick=()=>{if(i<Qs.length-1){i++;render()}else finish()};
+
+function finish(){
+  clearInterval(tick);
+  const secs=Math.round((Date.now()-t0)/1000),areas={};let total=0;
+  Qs.forEach((q,k)=>{const r=areas[q.a]=areas[q.a]||{ok:0,n:0};r.n++;if(ans[k]===q.c){r.ok++;total++}});
+  const pct=Math.round(total/Qs.length*100);
+  const rec={d:Date.now(),m:mat,l:lvl,t:total,n:Qs.length,p:pct,s:secs,a:Qs.map((q,k)=>({a:q.a,q:q.q,m:q.o[ans[k]],c:q.o[q.c],e:q.e,ok:ans[k]===q.c}))};
+  const hist=load();hist.push(rec);const saved=save(hist);
+  let t,msg;
+  if(pct>=85){t="Muito bem preparado";msg=lvl==="Difícil"?"Excelente: você domina até o nível difícil. Treine com provas anteriores para ganhar velocidade.":"Ótimo resultado. Está na hora de tentar o próximo nível."}
+  else if(pct>=65){t="Bom caminho";msg="Boa base. Revise as questões erradas abaixo e refaça a prova."}
+  else if(pct>=40){t="Precisa reforçar";msg="Há lacunas importantes. Estude um pouco por dia, começando pela matéria mais fraca."}
+  else{t="Começo da jornada";msg="Sem problema: comece pelo nível "+(lvl==="Fácil"?"fácil, revisando o básico":"anterior")+" e vá subindo."}
+  let rows="";const ks=Object.keys(areas);
+  if(ks.length>1)ks.forEach(n=>{const v=areas[n],p=Math.round(v.ok/v.n*100),col=p>=70?"var(--ok)":p>=40?"#d97706":"var(--bad)";
+    rows+='<div class="row"><div class="lab"><span>'+n+'</span><span>'+v.ok+'/'+v.n+'</span></div><div class="track"><i style="width:'+p+'%;background:'+col+'"></i></div></div>'});
+  let rev="";
+  Qs.forEach((q,k)=>{if(ans[k]!==q.c)rev+='<div class="rev"><strong>'+q.q+'</strong><br>Você marcou: '+L[ans[k]]+') '+q.o[ans[k]]+'<br>Correta: '+L[q.c]+') '+q.o[q.c]+'<br><span class="muted">'+q.e+'</span></div>'});
+  $("result").innerHTML='<h1>Resultado</h1><p class="muted">'+mat+' · nível '+lvl+'</p><div class="score">'+total+'/'+Qs.length+'</div><div class="level">'+t+' ('+pct+'%)</div><p>'+msg+'</p><p class="muted">Tempo: '+fmt(secs)+' · '+(saved?"Resultado salvo neste aparelho.":"Não foi possível salvar o resultado.")+'</p>'+rows+studyHTML(Qs.map((q,k)=>({a:q.a,q:q.q,ok:ans[k]===q.c})))+(rev?'<h2>Questões para revisar</h2>'+rev:'')+
+   '<div class="actions"><button id="again">Refazer</button><button id="back" class="ghost">Escolher outra prova</button><button id="seehist" class="ghost">Ver histórico</button></div>'+
+   '<p class="muted note">Este simulado mede apenas o preparo para conteúdos do tipo cobrado na ETEC. Não mede inteligência nem substitui as provas oficiais anteriores.</p>';
+  $("again").onclick=()=>$("go").onclick();
+  $("back").onclick=()=>show("menu");
+  $("seehist").onclick=()=>{renderHist();show("hist")};
+  show("result");
+}
+</script>
+</body>
+</html>
